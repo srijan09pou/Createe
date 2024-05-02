@@ -2,16 +2,179 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            width: 300px;
+            height: 100vh;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 77px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        input {
+            padding: 12px;
+            width: 100%;
+            height: 60px;
+            font-size: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        
+        .password-toggle {
+            position: absolute;
+            right: 25px;
+            cursor: pointer;
+            transform: translateY(440%);
+            z-index: 1;
+            margin-top: 5px;
+            color: #007bff;
+        }
+
+        .password-toggle img {
+            width: 20px; /* Adjust the size of the icon as needed */
+            height: 20px;
+            color: #fff;
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #4267B2;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .error-message {
+            color: #dc3545;
+            margin-top: 5px;
+        }
+
+        .create {
+            width: 100%;
+            height: 40px;
+            border-radius: 30px;
+            margin-top: 80px;
+            border: 1px solid #000000;
+        }
+
+        .create p {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .eye-icon {
+            width: 20px;
+            height: 20px;
+            margin-left: -30px; /* Adjust as needed */
+            cursor: pointer;
+        }
+
+        .com {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            margin: 5px;
+        }
+
+        .com img {
+            width: 28%;
+            height: 20px;
+        }
+
+        .com span {
+            font-size: 15px;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Page</h1>
-    <p>This is a paragraph.</p>
-    <a href="home.html"> Go to Home </a>
-    <button onclick="myFunction()">Click me</button>
-    <script src="script.js"></script>
+
+    <div class="login-container">
+        <div class="logo"><img src="facebook.png" alt="logo"></div>
+        <form id="loginForm" onsubmit="validateForm(event)">
+            <input type="text" id="username" required placeholder="Mobile number or email">
+            <input type="password" id="password" required placeholder="Password">
+            <span class="password-toggle" onclick="togglePassword()"><img src="view.png" alt="view" class="eye-icon"></span>
+            <button type="submit" style="border-radius: 30px;">Login</button>
+            <p>Forgot Password?</p>
+            <div class="create">
+                <p>Create new account</p>
+            </div>
+            <div class="error-message" id="errorMessage"></div>
+            <div class="com"><img src="facebook.png" alt="User B"><span>Meta</span></div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm(event) {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Array of valid username-password pairs
+            var validCredentials = [
+                { username: 'User1', password: 'pass1', fullName: 'Srijan Poudel', email: 'srijan@email.com', avatar: 'home.png' },
+                { username: 'User2', password: 'pass2', fullName: 'Simran Poudel', email: 'simran@email.com', avatar: 'about.png' },
+                { username: 'User3', password: 'pass3', fullName: 'Swastima Khadka', email: 'swastima@email.com', avatar: 'heart.png' },
+                { username: 'User4', password: 'pass4', fullName: 'Tony Stark', email: 'tony@email.com', avatar: 'like.png' },
+                { username: 'Raj Shah', password: 'pass5', fullName: 'Jenifer Lawrence', email: 'jenifer@email.com', avatar: 'menu.png' }
+            ];
+
+            // Check if entered credentials are valid
+            var user = validCredentials.find(cred => cred.username === username && cred.password === password);
+
+            if (user) {
+                // Assuming successful login, store the username in local storage
+                localStorage.setItem('loggedInUser', JSON.stringify(user));
+
+                // Redirect to home.html
+                window.location.href = 'home.html';
+                event.preventDefault(); // Move this line here
+            } else {
+                document.getElementById('errorMessage').textContent = 'Invalid username or password. Please try again.';
+                event.preventDefault();
+            }
+        }
+
+        function togglePassword() {
+            var passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+    </script>
 </body>
-</html>
+    </html>
