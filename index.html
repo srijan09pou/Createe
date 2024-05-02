@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
+        
+       @media (max-width: 600px) {
+        /* Styles for screens up to 600px wide */
+       }
+
+       @media (min-width: 601px) and (max-width: 1024px) {
+        /* Styles for screens between 601px and 1024px wide */
+       }
+
+       @media (min-width: 1025px) {
+        /* Styles for screens wider than 1024px */
+       }
+        
         body {
             font-family: Arial, sans-serif;
             display: flex;
@@ -35,6 +48,8 @@
         .logo img {
             width: 80px;
             height: 77px;
+            max-width: 100%;
+            height: auto;
             margin-top: 70px;
             margin-bottom: 70px;
         }
@@ -61,7 +76,8 @@
 
         .password-toggle img {
             width: 20px; /* Adjust the size of the icon as needed */
-            height: 20px;
+            max-width: 100%;
+            height: auto;
             color: #fff;
         }
         
@@ -111,6 +127,7 @@
         .com img {
             width: 8%;
             height: auto;
+            max-width: 100%;
         }
 
         .com span {
