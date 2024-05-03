@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Share Post</title>
+    
+    <style>
+    	
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            position: fixed;
+            width: 359px; 
+            margin-bottom: 10px; 
+        }
+
+        .back, .search {
+            border: none;
+            cursor: pointer;
+        }
+        
+        .header img {
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    margin-left: 15px; /* Adjust the margin as needed */
+    margin-top: 10px; 
+    margin-right: 20px; 
+    margin-bottom: 10px; 
+}
+
+      .head {
+    margin-left: 15px; /* Adjust the margin as needed */
+    margin-top: 6px; 
+    font-size: 20px;
+}
+
+        .post {
+            background-color: #fff;
+            width: 100%;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-top: 35px; 
+        }
+        
+        /* Your existing styles */
+        .user-info {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+.user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        
+        .details {
+            display: flex;
+            flex-direction: column;
+            margin-right: auto;
+        }
+
+.details span {
+            font-weight: bold;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        
+        .options {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .metadata img {
+    width: 17px;
+    height: 17px;
+    margin-left: 10px;
+}
+        
+         .post-content {
+            padding: 10px;
+        }
+        
+        .post-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        
+        .post-actions {
+            display: flex;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .post-actions img {
+    width: 20px;
+    height: 20px;
+}
+
+        .action-box {
+        	display: flex;
+            height: 15px;
+            width: 100px;            
+            padding: 10px;
+            cursor: pointer;
+            margin-left: 5px;
+            line-height: 35px;  
+            margin-right: 5px;
+            align-items: center;
+            border-radius: 20px;            
+            border: 3px solid #ddd;
+            justify-content: space-around; /* Add space around children */
+        }
+
+        .action-box i {
+            margin-right: 5px;
+        }
+
+        .action-box.active {
+            background-color: #4267B2;
+            color: #fff;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 60%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .modal-option {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .modal-option:hover {
+            background-color: #f0f2f5;
+        }
+        
+        /* Add these styles for the modal input and button */
+.modal-input {
+    /* Your styles for modal input */
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-button {
+    /* Your styles for modal button */
+    padding: 10px;
+    background-color: #4267B2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.options img {
+    width: 28px;
+    height: 28px;
+}
+
+.options-item img {
+  width: 24px; 
+  height: 24px; 
+  margin-right: 8px; 
+}
+
+.omodal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 30%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+.options-item {
+    /* Add styles for each options item here */
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+    .options-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.share-option {
+    /* Add styles for each share option here */
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.share-option img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    height: auto; 
+}
+
+
+        h2 {
+	        margin-left: 28px;            
+            margin-bottom: 10px; /* Adjust margin */
+            text-align: left; /* Align the text to the left */
+            align-self: flex-start; /* Align the text to the top left within its container */
+        }
+        
+        .comment-box {
+            margin-bottom: 20px;
+            margin-left: 20px;
+            border-radius: 10px;
+            width: 300px;
+            border: 1px solid #e0e0e0;
+            background-color: #fafafa;
+        }
+        
+        .bob {
+        	width: 230px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            background-color: #fafafa;
+        }
+
+        .user-section {
+        	margin-left: 15px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;            
+        }
+
+         .modal {
+            display: none;
+            position: fixed;
+            top: 90%;
+            
+        }
+
+        .modal-button {
+            padding: 10px;
+            background-color: #4267B2;
+            color: #fff;
+            width: 350px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .comment-modal {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;         
+            width: 350px;
+        }
+        
+       .comment-modal1 {
+    background-color: #fff;
+    align-items: center; 
+    flex-direction: column; 
+    padding-bottom: 60px; /* Adjust the value as needed to prevent overlapping with the comment input */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+	        margin-left: 28px;            
+            margin-bottom: 10px; /* Adjust margin */
+            text-align: left; /* Align the text to the left */
+            align-self: flex-start; /* Align the text to the top left within its container */
+        }
+        
+.comment {
+	        margin-left: 65px;            
+            margin-bottom: 10px; /* Adjust margin */
+            text-align: left; /* Align the text to the left */
+            align-self: flex-start; /* Align the text to the top left within its container */
+        }
+
+        .user-badge {
+            font-size: 14px;
+            color: #4CAF50;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+
+        .username {
+    color: #777;
+    font-size: 18px;
+    margin-left: 10px; 
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+        .timestamp {
+            color: #777;
+            font-size: 10px;
+            margin-left: 65px; 
+        }
+
+.reply-icon {
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    margin-left: 10px; /* Add margin for spacing */
+}
+
+.comment-actions {
+    margin-top: 15px; 
+    margin-bottom: 15px;
+    margin-right: 15px; /* Add margin for spacing */
+    display: flex; /* Align icons in a row */
+    align-items: center; /* Align items in the center vertically */
+}
+
+.like-icon,
+.dislike-icon {
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    margin-right: 5px; /* Add margin for spacing */
+}
+.like-icon {
+	margin-left: 10px;
+	}
+
+.like-count,
+.dislike-count {
+	font-size: 10px;
+    margin-right: 10px; /* Increase distance between icons and counters */
+}
+
+.comment-input-section {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff; /* Add your desired background color */
+        }
+        
+        .input-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .comment-input {
+            flex-grow: 1;
+            width: 220px;
+            padding: 12px;
+             border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-left: 10px;
+            color: #333;
+            outline: none;
+        }
+
+.post-icon {
+        	width: 15px; 
+            height: 15px; 
+            padding: 12px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .input-avatar {
+            width: 30px;
+            height: 30px;
+            margin-left: 20px;
+            border-radius: 50%;
+        }
+
+</style>
+</head>
+<body>
+
+<div class="header">
+    <img src="back.png" class="back" alt="public" onclick="goBack()" >
+    <span class="head" >Comments</span>
+    <img src="search.png" class="search" alt="search" onclick="search()" >
+</div>
+
+<div class="post">
+        <div class="user-info">
+        	<img src="avatar.jpg" alt="Profile Icon" id="profile-icon" onclick="openProfilePage()">
+            <div class="details">
+                <span onclick="window.location='#'">User Name</span>
+                <div class="metadata">
+                    1 day ago
+                   <img src="public.png" alt="public" >Public
+                </div>
+            </div>
+    <!-- Sample Post 1 -->
+            <div class="options" onclick="toggleOptionsMenu(1)" id="OptionsMenu_1">
+                <img src="option.png" alt="option" >
+            </div>
+        </div>
+        <div class="post-content">
+            <p>This is a sample post.</p>
+            <img class="post-image" src="avatar.jpg" alt="Post Image">
+        </div>
+        
+       
+        <div class="post-actions">
+            <div class="action-box" onclick="toggleLike(1)" id="likeButton_1">
+                <img src="like.png" alt="like"  >
+            </div>
+            <div class="action-box" onclick="toggleCommentModal(1)" id="CommentButton_1">
+                <img src="comment.png" alt="comment" >
+            </div>
+            <div class="action-box" onclick="shareButtonClicked(1)" ondblclick="closeShareOptions(1);">
+                <img src="share.png" alt="share" >
+            </div>
+        </div>
+    </div>
+
+    <!-- Comment Modal for Post 1 -->
+    <div id="commentModal_1" class="modal">
+        <input type="text" class="modal-input" placeholder="Write a comment...">
+        <button class="modal-button" onclick="closeCommentModal(1)">Post Comment</button>
+        <!-- ... Your existing modal content ... -->
+    </div>
+    <!-- Options Modal for Post 1 -->
+    <div id="optionsModal_1" class="omodal">
+            <div class="options-item" onclick="followAction()">
+      <img src="follow.png" alt="Friends"  onclick="openSearchBox()" >
+      <span>Follow</span>
+    </div>
+    <div class="options-item" onclick="saveAction()">
+      <img src="save.png" alt="Friends"  onclick="openSearchBox()" >
+      <span>Save</span>
+    </div>
+    <div class="options-item" onclick="reportAction()">
+      <img src="report.png" alt="Report"  >
+      <span>Report</span>
+    </div>
+        <button class="modal-button" onclick="closeOptionsMenu(1)">Cancel</button>
+        <!-- ... Your existing modal content ... -->
+    </div>
+    <!-- Share Options for Post 1 -->
+    <div id="shareOptions_1" class="modal" style="display: none;">
+    	<div class="share-option" onclick="shareOnFacebook()">
+      <img src="facebook.png" alt="facebook"  onclick="openFacebookBox()" >
+      <span class="option-text">Share on Facebook</span>
+    </div>
+         <div class="share-option" onclick="shareWithFriends()">
+        <img src="friends.png" alt="Friends"  onclick="openSearchBox()" >
+      <span class="option-text">Share with Friends</span>
+    </div>
+    <div class="share-option" onclick="shareOnMessenger()">
+      <img src="chat.png" alt="Chat"  onclick="openSearchBox()" >
+      <span class="option-text">Share on Messenger</span>
+    </div>
+    <div class="share-option" onclick="shareOnGroup()">
+      <img src="group.png" alt="Group"  onclick="openSearchBox()" >
+      <span class="option-text">Share on Group</span>
+    </div>
+    <div class="share-option" onclick="shareOnPage()">
+      <img src="page.png" alt="Page"  onclick="openSearchBox()" >
+      <span class="option-text">Share on Page</span>
+    </div>
+    <div class="share-option" onclick="showMoreOptions()">
+      <img src="option.png" alt="option" >
+      <span class="option-text">More</span>
+    </div>
+    
+        <button class="modal-button" onclick="closeShareOptions(1)">Cancel</button>
+        <!-- ... Your existing modal content ... -->
+    </div>
+    </div>
+    
+       
+                <div class="comment-modal" id="commentModal">
+            <div class="comment-modal1">
+        <h2>Comments</h2>
+        
+        
+       <!-- Sample Comment 1 -->
+
+		<div class="comment-box" >
+			<div class="user-section">
+			<img src="user_avatar.jpg" alt="User Avatar" class="avatar">
+	            <div class="bob">
+            <span class="username"><strong>username</strong></span>
+        <span style="margin-left: 89px;" ></span>
+        <span class="comment" style="margin-left: 10px" >That's amazing. I loved it.</span>
+         </div></div>
+        <div class="comment-actions">
+        <span class="like-button">
+        	<span class="timestamp">Just now</span>
+            <span class="like-icon" >
+             <img src="like.png" ialt="like" class="like-icon">
+            </span>
+            <span class="like-count" >1</span>
+            <img src="reply.png" id="replyButton" alt="reply" class="reply-icon">
+            </span>
+            </span>
+        </div>
+        </div>
+   
+            	
+        <!-- Comment Input Section -->
+        <div class="comment-input-section">
+            <div class="input-section">
+                <img src="user_avatar.jpg" alt="User Avatar" class="input-avatar">
+                <input type="text" placeholder="Add a public comment..." class="comment-input">
+                <span class="post-button" onclick="postComment()"><img src="send.png" id="postButton" alt="post" class="post-icon"></span>
+            </div>
+        </div>
+        <script>
+
+    function goBack() {
+        // Add logic to navigate back to the previous page
+        window.history.back();
+        }
+        
+</script>
+<script>
+	
+    let comments = [];
+
+    function addComment(username, text) {
+        comments.push({ username, text, likes: 0, dislikes: 0, isLiked: false, isDisliked: false });
+    }
+
+    function postComment() {
+        var modal = document.getElementById('commentModal');
+        modal.style.display = 'block';
+
+        // Get the comment input value
+        var commentInput = document.querySelector('.comment-input').value;
+
+        // Create a new comment element
+        var newComment = document.createElement('div');
+        newComment.className = 'comment';
+
+        // Add the comment to the array
+        addComment('@current_user', commentInput);
+
+        // Update the comment modal HTML
+        updateCommentModal();
+
+        // Clear the comment input
+        document.querySelector('.comment-input').value = '';
+    }
+
+    function updateCommentModal() {
+        // Get the comment modal container
+        const commentModalContainer = document.querySelector('.comment-modal1');
+
+        // Append the latest comment to the modal
+        const latestCommentIndex = comments.length - 1;
+        commentModalContainer.appendChild(createCommentElement(comments[latestCommentIndex], latestCommentIndex));
+    }
+
+    function createCommentElement(comment, index) {
+        // Create a new comment element
+        const newComment = document.createElement('div');
+        newComment.className = 'comment-box';
+
+        // User section
+        newComment.innerHTML += `<div class="user-section">
+            <img src="user_avatar.jpg" alt="User Avatar" class="avatar">
+            <span class="username"><strong>${comment.username}</strong></span>
+        </div>`;
+
+        // Comment
+        newComment.innerHTML += `<div class="comment">${comment.text}</div>`;
+     
+        // Comment actions
+    newComment.innerHTML += `<div class="comment-actions">
+        <span class="like-button">
+        	<span class="timestamp">Just now</span>
+            <span class="like-icon" onclick="toggleLike('likeButton${index}')">
+                <img src="like.png" id="likeButton${index}" alt="like" class="like-icon">
+            </span>
+            <span class="like-count" id="likesCount${index}">${comment.likes}</span>
+            <span class="dislike-icon" onclick="toggleDislike('dislikeButton${index}')">
+                <img src="dislike.png" id="dislikeButton${index}" alt="dislike" class="dislike-icon">
+            </span>
+            <span class="dislike-count" id="dislikesCount${index}">${comment.dislikes}</span>
+            <span class="reply-icon" onclick="toggleReply('replyButton${index}')">
+                <img src="reply.png" id="replyButton${index}" alt="reply" class="reply-icon">
+            </span>
+        </div>`;
+
+    return newComment;
+}
+
+    
+function toggleReply(buttonId) {
+}
+    </script>
+    <script>
+    
+    let isLiked = false;
+    let isDisliked = false;
+    let likesCount = 0;
+    let dislikesCount = 0;
+
+    function toggleLike(buttonId) {
+    const likeButton = document.getElementById(buttonId);
+    if (isLiked) {
+        isLiked = false;
+        likesCount--;
+    } else {
+        isLiked = true;
+        likesCount++;
+        // If the comment is disliked, undo the dislike
+        if (isDisliked) {
+            isDisliked = false;
+            dislikesCount--;
+        }
+    }
+
+    updateLikesDislikes(buttonId);
+}
+
+    function toggleDislike(buttonId) {
+    const dislikeButton = document.getElementById(buttonId);
+    if (isDisliked) {
+        isDisliked = false;
+        dislikesCount--;
+    } else {
+        isDisliked = true;
+        dislikesCount++;
+        // If the comment is liked, undo the like
+        if (isLiked) {
+            isLiked = false;
+            likesCount--;
+        }
+    }
+
+    updateLikesDislikes(buttonId);
+}
+    
+    
+    
+    function updateLikesDislikes(buttonId) {
+    const likeButton = document.getElementById('likeButton' + buttonId.slice(-1));
+    const dislikeButton = document.getElementById('dislikeButton' + buttonId.slice(-1));
+
+    likeButton.src = isLiked ? 'liked.png' : 'like.png';
+    dislikeButton.src = isDisliked ? 'disliked.png' : 'dislike.png';
+
+    const likesCountElement = document.getElementById('likesCount' + buttonId.slice(-1));
+    const dislikesCountElement = document.getElementById('dislikesCount' + buttonId.slice(-1));
+
+    likesCountElement.innerText = likesCount;
+    dislikesCountElement.innerText = dislikesCount;
+}
+  </script>
+</body>
+</html>

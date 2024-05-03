@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* Global styles */
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            align-items: center;
+            background-color: #57CE00;
+        }
+
+        .second {
+            background-color: #fff;
+            color: #FF8200;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1px 0;
+            width: 100%;
+        }
+        
+        .edit-icon img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .menum img {
+            width: 24px;
+            height: 24px;
+            margin-left: 20px;
+            margin-right: 10px;
+        }
+
+        .third {
+            background-color: #fff;
+            color: #FF8200;
+            align-items: center;
+            margin: 3px 0;
+            height: 30px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Add styles for the search box */
+        .search-box {
+            width: 90%;
+            height: 55%;
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 5px;
+            margin: 0 10px;
+            border: 1px solid #000000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            width: 98%;
+            height: 95%;
+            padding: 5px;
+            border-radius: 20px;
+            outline: none;
+            border: 1px solid #ddd;
+        }
+
+        .search-icon {
+            cursor: pointer;
+            padding: 10px;
+            margin-right: 5px;
+            color: #fff;
+            width: 20px; 
+            height: 20px;
+        }
+
+        .search-box button {
+            background-color: #4267B2;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        /* Add styles for the profile icons */
+        .profile-icons {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            font-size: 15px;
+            background-color: #fff;
+        }
+
+        .profile-icon {
+            display: flex;
+            margin-top: 10px;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .profile-icon img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 1px solid #000000;
+        }
+
+        .profile-icon span {
+            margin-top: 5px;
+        }
+
+        .username {
+            margin-left: 5px;
+        }
+        
+        .chat {
+            height: 75vh;
+            background-color: #fff;
+        }
+
+        .chat-list {
+            border: 1px solid #000000;
+            margin: 2px;
+        }
+
+        .chat-entry {
+            display: flex;
+            align-items: center;
+            padding: 1px;
+            background-color: #fff;
+            border: 1px solid #000000;
+            margin: 2px;
+        }
+
+        .profile img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin: 0 5px;
+            border: 1px solid #000000;
+        }
+
+        .chat-info {
+            flex: 1;
+            width: 70%;
+            margin: 2px;
+            border: 1px solid #000000;
+        }
+
+        .contact-name {
+            margin: 0;
+            font-size: 18px;
+            margin: 2px;
+            border: 1px solid #000000;
+        }
+
+        .last-message {
+            margin: 0;
+            font-size: 15px;
+            margin: 2px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color: #888;
+            border: 1px solid #000000;
+        }
+
+        .message-status img {
+            width: 15px;
+            height: 15px;
+            margin: 2px;
+            border-radius: 50%;
+            border: 1px solid #000000;
+        }
+
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            position: fixed;
+            bottom: 0;
+            text-align: center;
+        }
+
+        .footer img {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            margin: 10px 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="second">
+        <div class="menum" onclick="openmenum()">
+            <img src="menu.png" alt="Menu">
+        </div>
+        <h3>Chats</h3>
+        <div class="edit-icon" onclick="openEdit()">
+            <img src="edit.png" alt="Edit">
+        </div>
+    </div>
+    
+            <div class="third">
+            <div class="search-box" onclick="searchc()">
+                <img src="search.png" class="search-icon" alt="Search" >
+                <input type="text" placeholder="Search...">
+            </div>
+            </div>
+
+        <!-- Add profile icons -->
+        <div class="profile-icons">
+            <div class="profile-icon" onclick="openProfile('User1')">
+                <img src="avatar.jpg" alt="Profile 1">
+                <span>User1</span>
+            </div>
+            <div class="profile-icon" onclick="openProfile('User2')">
+                <img src="avatar.jpg" alt="Profile 2">
+                <span>User2</span>
+            </div>
+            <div class="profile-icon" onclick="openProfile('User3')">
+                <img src="avatar.jpg" alt="Profile 3">
+                <span>User3</span>
+            </div>
+            <div class="profile-icon" onclick="openProfile('User4')">
+                <img src="avatar.jpg" alt="Profile 4">
+                <span>User4</span>
+            </div>
+            <div class="profile-icon" onclick="openProfile('User5')">
+                <img src="avatar.jpg" alt="Profile 5">
+                <span>User6</span>
+            </div>
+            <div class="profile-icon" onclick="openProfile('User5')">
+                <img src="avatar.jpg" alt="Profile 5">
+                <span>User7</span>
+            </div>
+            <div class="profile-icon" onclick="openProfile('User5')">
+                <img src="avatar.jpg" alt="Profile 5">
+                <span>User8</span>
+            </div>
+            <div class="profile-icon" onclick="openProfile('User5')">
+                <img src="avatar.jpg" alt="Profile 5">
+                <span>User9</span>
+            </div>
+            <div class="profile-icon" onclick="openProfile('User5')">
+                <img src="avatar.jpg" alt="Profile 5">
+                <span>User10</span>
+            </div>
+        </div>
+
+<div class="chat">
+    <div class="chat-list">
+    <div class="chat-entry" onclick="navigateChatRoom()">
+    	<div class="profile">
+        <img src="profile_picture.jpg" alt="Profile Picture">
+        </div>
+        <div class="chat-info">
+            <h3 class="contact-name">Contact Name</h3>
+            <p class="last-message">Last message sent or received</p>
+        </div>
+        <div class="message-status">
+            <!-- Use appropriate symbols or images for read/unread status or delivery confirmation -->
+            <img src="read_icon.png" alt="Read Icon">
+        </div>
+    </div>
+    <div class="chat-entry" onclick="navigateChatRoom()">
+    	<div class="profile">
+        <img src="profile_picture.jpg" alt="Profile Picture">
+        </div>
+        <div class="chat-info">
+            <h3 class="contact-name">Contact Name</h3>
+            <p class="last-message">Last message sent or received</p>
+        </div>
+        <div class="message-status">
+            <!-- Use appropriate symbols or images for read/unread status or delivery confirmation -->
+            <img src="read_icon.png" alt="Read Icon">
+        </div>
+    </div>
+    <div class="chat-entry" onclick="navigateChatRoom()">
+    	<div class="profile">
+        <img src="profile_picture.jpg" alt="Profile Picture">
+        </div>
+        <div class="chat-info">
+            <h3 class="contact-name">Contact Name</h3>
+            <p class="last-message">Last message sent or received</p>
+        </div>
+        <div class="message-status">
+            <!-- Use appropriate symbols or images for read/unread status or delivery confirmation -->
+            <img src="read_icon.png" alt="Read Icon">
+        </div>
+    </div>
+    <div class="chat-entry" onclick="navigateChatRoom()">
+    	<div class="profile">
+        <img src="profile_picture.jpg" alt="Profile Picture">
+        </div>
+        <div class="chat-info">
+            <h3 class="contact-name">Contact Name</h3>
+            <p class="last-message">Last message sent or received</p>
+        </div>
+        <div class="message-status">
+            <!-- Use appropriate symbols or images for read/unread status or delivery confirmation -->
+            <img src="read_icon.png" alt="Read Icon">
+        </div>
+    </div>
+    <div class="chat-entry" onclick="navigateChatRoom()" >
+    	<div class="profile">
+        <img src="profile_picture.jpg" alt="Profile Picture">
+        </div>
+        <div class="chat-info">
+            <h3 class="contact-name">Contact Name</h3>
+            <p class="last-message">Last message sent or received</p>
+        </div>
+        <div class="message-status">
+            <!-- Use appropriate symbols or images for read/unread status or delivery confirmation -->
+            <img src="read_icon.png" alt="Read Icon">
+        </div>
+    </div>
+    <div class="chat-entry" onclick="navigateChatRoom()">
+    	<div class="profile">
+        <img src="profile_picture.jpg" alt="Profile Picture">
+        </div>
+        <div class="chat-info">
+            <h3 class="contact-name">Contact Name</h3>
+            <p class="last-message">Last message sent or received</p>
+        </div>
+        <div class="message-status">
+            <!-- Use appropriate symbols or images for read/unread status or delivery confirmation -->
+            <img src="read_icon.png" alt="Read Icon">
+        </div>
+    </div>
+    
+    <!-- More chat entries go here -->
+</div>
+</div>
+
+<div class="footer">
+    <img src="chat.png" alt="Chat"  onclick="openChat()" >
+    <img src="audio.png" alt="Audio"  onclick="openCalls()" >
+    <img src="people.png" alt="People"  onclick="openPeople()" >
+</div>
+
+    <script>
+    	
+        function navigateToPage(page) {
+            const pages = ['home', 'friends', 'notifications', 'groups', 'chat', 'tv', 'search', 'menu'];
+            if (pages.includes(page)) {
+                window.location.href = `${page}.html`;
+            } else {
+                console.log(`Navigate to ${page} page`);
+            }
+        }
+
+        function openmenum() {
+            alert('Menu icon clicked');
+        }
+
+        function openEdit() {
+            alert('Edit icon clicked');
+        }
+
+        function openProfile(username) {
+            window.location.href = 'profile.html'; // Link to the profile page
+            // Add your logic for opening the profile
+        }
+
+        function openChat() {
+            alert('Chat icon clicked');
+            // Add your logic for opening the chat
+        }
+
+        function openCalls() {
+            alert('Calls icon clicked');
+            // Add your logic for opening the calls
+        }
+
+        function openPeople() {
+            alert('People icon clicked');
+            // Add your logic for opening the people
+        }
+        
+        function navigateChatRoom() {
+       	window.location.href = 'chatroom.html'; // Link to the chatroom page
+       }
+    </script>
+</body>
+</html>

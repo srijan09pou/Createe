@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* Global styles */
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            align-items: center;
+            background-color: #57CE00;
+        }
+        
+        /* First Part */
+
+        /* Header styles */
+        header {
+            background-color: #fff;
+            color: #fff;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h4 {
+            font-size: 20px;
+            margin: 0;
+            padding: 10px;
+            font-weight: bold;
+            color: #FF8A00;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand img {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+
+        /* Navigation icons styles */
+        .nav-icons {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            background-color: #fff;
+            color: #fff;
+            padding: 10px 0;
+            margin-bottom: 3px;
+        }
+
+        .nav-icons img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        
+        /* First Part End */
+        
+        .read {
+    margin: 3px 4px; /* Adjust the margin as needed */
+    padding: 10px;
+    background-color: #fff;
+}
+
+        .read-details {
+        align-items: center;
+        margin-left: 100px;
+        }
+        
+        .second {
+            background-color: #fff;
+            color: #FF7D00;
+            padding: 0;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .notification {
+    border: 1px solid #ddd;
+    margin-top: 3px; /* Adjust the margin as needed */
+    padding: 10px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    background-color: #fff;
+    height: 100vh;
+}
+
+.when {
+    margin-top: 5px; /* Adjust the margin as needed */
+    padding: 10px 0;
+    background-color: #fff;
+}
+        
+       .notification {
+    border: 1px solid #ddd;
+    margin-top: 3px; /* Adjust the margin as needed */
+    padding: 10px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    background-color: #fff;
+    height: 50px;
+}
+
+        .profile-pic img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .notification-details {
+            flex-grow: 1;
+        }
+
+        .notification-actions {
+            display: flex;
+            align-items: center; /* Align items vertically */
+        }
+        
+        .option-menu img {
+    width: 28px;
+    height: 28px;
+}
+
+.modal {
+            position: fixed;
+            top: 590px;
+            left: 180px;
+            display: flex;
+        	justify-content: space-between;
+            align-items: center;
+            width: 358px;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border-radius: 10px;
+            border: 1px solid #000000;
+        }
+
+.option-item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 5px;
+}
+.option-item img {
+    width: 24px;
+    margin: 5px 10px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #80FF00;
+}
+
+    </style>
+    
+    
+</head>
+<body>
+
+<header>
+    <h4>facebook</h4>
+    <div class="brand">
+        <img src="search.png" alt="Search" onclick="navigateToPage('search')">
+        <img src="menu.png" alt="Menu" onclick="navigateToPage('menu')">
+    </div>
+</header>
+
+<div class="nav-icons">
+    <img src="home.png" alt="Home" onclick="navigateToPage('home')">
+    <img src="friends.png" alt="Friends" onclick="navigateToPage('friends')">
+    <img src="chat.png" alt="Chat" onclick="navigateToPage('chat')">
+    <img src="tv.png" alt="TV" onclick="navigateToPage('tv')">
+    <img src="notifications1.png" alt="Notifications" onclick="navigateToPage('notifications')">
+    <img src="group.png" alt="Groups" onclick="navigateToPage('groups')">
+</div>
+
+<header>
+    <h4>Notification</h4>
+    <div class="brand">
+    	<img src="seen.png" alt="Search" onclick="navigateToPage('search')">
+        <img src="search.png" alt="Search" onclick="navigateToPage('search')">
+    </div>
+</header>
+             
+        <div class="read">
+            <span class="read-details">Mark all as read</span>
+        </div>
+   <div class="notifications">
+   	<div class="when" ><span style="margin-left: 10px;">New</span><div>
+<main>
+        <div class="notification">
+            <div class="profile-pic">
+                <img src="avatar.jpg" alt="Profile Picture">
+            </div>
+            <div class="notification-details">
+                <span>User 1 liked your post.</span>
+                <div class="timestrap"><span>2h ago</span></div>
+            </div>
+            <div class="notification-actions">
+                <div class="option-menu">
+            <img src="option.png" alt="option" onclick="toggleCommentModal()" id="CommentButton">
+        </div>
+    </div>
+</main>
+
+    <main>
+        <div class="notification">
+            <div class="profile-pic">
+                <img src="avatar.jpg" alt="Profile Picture">
+            </div>
+            <div class="notification-details">
+                <span>User 2 liked your post.</span>
+                <div class="timestrap"><span>2h ago</span></div>
+            </div>
+            <div class="notification-actions">
+                <div class="option-menu">
+            <img src="option.png" alt="option" onclick="toggleCommentModal()" id="CommentButton">
+        </div>
+    </div>
+</main>
+
+    <main>
+        <div class="notification">
+            <div class="profile-pic">
+                <img src="avatar.jpg" alt="Profile Picture">
+            </div>
+            <div class="notification-details">
+                <span>User 3 liked your post.</span>
+                <div class="timestrap"><span>2h ago</span></div>
+            </div>
+            <div class="notification-actions">
+                <div class="option-menu">
+            <img src="option.png" alt="option" onclick="toggleCommentModal()" id="CommentButton">
+        </div>
+    </div>
+</main>
+
+    <main>
+        <div class="notification">
+            <div class="profile-pic">
+                <img src="avatar.jpg" alt="Profile Picture">
+            </div>
+            <div class="notification-details">
+                <span>User 4 liked your post.</span>
+                <div class="timestrap"><span>2h ago</span></div>
+            </div>
+            <div class="notification-actions">
+                <div class="option-menu">
+            <img src="option.png" alt="option" onclick="toggleCommentModal()" id="CommentButton" >
+        </div>
+    </div>
+</main>
+
+    <main>
+        <div class="notification">
+            <div class="profile-pic">
+                <img src="avatar.jpg" alt="Profile Picture">
+            </div>
+            <div class="notification-details">
+                <span>User 5 liked your post.</span>
+                <div class="timestrap"><span>2h ago</span></div>
+            </div>
+            <div class="notification-actions">
+                <div class="option-menu">
+            <img src="option.png" alt="option" onclick="toggleCommentModal()" id="CommentButton">
+        </div>
+    </div>
+</main>
+<div class="when" ><span style="margin-left: 10px;">Earlier</span><div>
+<main>
+        <div class="notification">
+            <div class="profile-pic">
+                <img src="avatar.jpg" alt="Profile Picture">
+            </div>
+            <div class="notification-details">
+                <span>User 6 liked your post.</span>
+                <div class="timestrap"><span>2h ago</span></div>
+            </div>
+            <div class="notification-actions">
+                <div class="option-menu">
+            <img src="option.png" alt="option" onclick="toggleCommentModal()" id="CommentButton">
+        </div>
+    </div>
+</main>
+
+<main>
+        <div class="notification">
+            <div class="profile-pic">
+                <img src="avatar.jpg" alt="Profile Picture">
+            </div>
+            <div class="notification-details">
+                <span>User 7 liked your post.</span>
+                <div class="timestrap"><span>2h ago</span></div>
+                </div>
+            <div class="notification-actions">
+                <div class="option-menu">
+            <img src="option.png" alt="option" onclick="toggleCommentModal()" id="CommentButton">
+        </div>
+    </div>
+</main>
+
+<main>
+        <div class="notification">
+            <div class="profile-pic">
+                <img src="avatar.jpg" alt="Profile Picture">
+            </div>
+            <div class="notification-details">
+                <span>User 8 liked your post.</span>
+                <div class="timestrap"><span>2h ago</span></div>
+                </div>
+            <div class="notification-actions">
+                <div class="option-menu">
+            <img src="option.png" alt="option" onclick="toggleCommentModal()" id="CommentButton">
+            <div class="options-menu" id="optionsMenu7">
+        </div>
+    </div>
+</main>
+</div>
+<div id="commentModal" class="modal" style="display: none;" onclick="closeCommentModal()">
+	<div class="option-item" >
+	<img src="hide.png" alt="option" >
+		<div>
+        <span class="modal-button" >Remove this notification</span>
+    </div></div>
+             <script>
+             	
+function navigateToPage(page) {
+        const pages = ['home', 'friends', 'notifications', 'groups', 'chat', 'tv', 'search', 'menu'];
+        if (pages.includes(page)) {
+            window.location.href = `${page}.html`;
+        } else {
+            console.log(`Navigate to ${page} page`);
+        }
+    }
+    
+    function toggleCommentModal() {
+    var modal = document.getElementById('commentModal');
+    modal.style.display = (modal.style.display === 'block') ? 'block' : 'block';
+
+  // Toggle body scrolling
+    toggleBodyScrolling();
+}
+
+function toggleBodyScrolling() {
+    var body = document.body;
+    body.style.overflow = (body.style.overflow === 'hidden') ? 'auto' : 'hidden';
+}
+
+function closeCommentModal() {
+    var modal = document.getElementById('commentModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    document.body.style.position = 'static';
+}
+
+
+function toggleOptions(menuId) {
+    var optionsMenu = document.getElementById(menuId);
+    optionsMenu.style.display = optionsMenu.style.display === 'block' ? 'block' : 'block';
+}
+
+function deleteComment(notificationId) {
+    // Add logic to delete the comment for the specific notification
+    var optionsMenu = document.getElementById('optionsMenu' + notificationId);
+    optionsMenu.style.display = 'none';
+    console.log("Delete comment for notification " + notificationId);
+}
+
+    </script>
+    
+
+</body>
+</html>

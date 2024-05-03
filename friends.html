@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* Global styles */
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            align-items: center;
+            background-color: #57CE00;
+        }
+        
+        /* First Part */
+
+        /* Header styles */
+        header {
+            background-color: #fff;
+            color: #fff;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h4 {
+            font-size: 20px;
+            margin: 0;
+            padding: 10px;
+            font-weight: bold;
+            color: #FF8A00;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        /* Navigation icons styles */
+        .nav-icons {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            background-color: #fff;
+            color: #fff;
+            padding: 10px 0;
+            margin-bottom: 3px;
+        }
+
+        .nav-icons img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        
+        /* First Part End */
+        
+        header button {
+            background-color: #fff;
+            color: #4267B2;
+            padding: 5px 10px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border: 1px solid #000000;
+            width: 100%;
+            height: 40px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            padding: 10px;
+            font-weight: bold;
+            color: #FF8A00;
+            margin: 3px 0;           
+            background-color: #fff;
+        }
+  
+        .friend {
+            border: 1px solid #000000;
+            margin: 3px 0;
+            display: flex;
+            align-items: center;
+            background-color: #fff; /* Added a white background */
+        }
+
+        .friend img {
+            width: 60px;
+            margin: 10px;
+            height: 60px;
+            border-radius: 50%; /* Adjusted border radius */
+        }
+
+        .friend-details {
+            flex-grow: 1;
+            display: block;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .user{
+        	font-size: 20px;
+        	}
+
+        .mutual-friends {
+            margin-left: 5px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .mutual-friends img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 10px 2px;
+        }
+
+        .friend-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+            width: 100%;
+            margin: 3px;
+            align-items: right;
+        }
+                
+    </style>
+</head>
+<body>
+
+<header>
+    <h4>facebook</h4>
+    <div class="brand">
+        <img src="search.png" alt="Search" onclick="navigateToPage('search')">
+        <img src="menu.png" alt="Menu" onclick="navigateToPage('menu')">
+    </div>
+</header>
+
+<div class="nav-icons">
+    <img src="home.png" alt="Home" onclick="navigateToPage('home')">
+    <img src="friends1.png" alt="Friends" onclick="navigateToPage('friends')">
+    <img src="chat.png" alt="Chat" onclick="navigateToPage('chat')">
+    <img src="tv.png" alt="TV" onclick="navigateToPage('tv')">
+    <img src="notifications.png" alt="Notifications" onclick="navigateToPage('notifications')">
+    <img src="group.png" alt="Groups" onclick="navigateToPage('groups')">
+</div>
+
+    <header>
+     	<h4>Friends</h4>
+        <div class="brand">
+            <div class="search-icon" onclick="openSearchBox()">
+                <img src="search.png" alt="Search"  onclick="openSearchBox()" style="width: 24px; height: 24px;">
+            </div>
+             </header>
+             </div>
+             
+             
+    <header>
+    	<button class="button" onclick="showRequests()">Requests</button>
+        <button class="button" onclick="showFriends()">Friends</button>
+    </header>
+    <h3>People you may know</h3>
+
+<div class="friend-list">
+    <div class="friend">
+        <img src="avatar.jpg" alt="Friend 1" onclick="navigateProfile()">
+        <div class="friend-details">
+            <span class="user">User Name 1</span>
+                <div class="mutual-friends">
+                    <img src="avatar.jpg" alt="Mutual Friend 1">
+                    <img src="avatar.jpg" alt="Mutual Friend 2">
+                    +8 more mutual friends
+            </div>
+            <div class="friend-buttons">
+                <button onclick="showAdd()">Add</button>
+                <button onclick="showRemove()">Remove</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="friend">
+        <img src="avatar.jpg" alt="Friend 2" onclick="navigateProfile()">
+        <div class="friend-details">
+            <span class="user">User Name 2</span>
+                <div class="mutual-friends">
+                    <img src="avatar.jpg" alt="Mutual Friend 1">
+                    <img src="avatar.jpg" alt="Mutual Friend 2">
+                    <span>+8 more mutual friends</span>
+                </div>
+            <div class="friend-buttons">
+                <button onclick="showAdd()">Add</button>
+                <button onclick="showRemove()">Remove</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="friend">
+        <img src="avatar.jpg" alt="Friend 1" onclick="navigateProfile()">
+        <div class="friend-details">
+            <span class="user">User Name 3</span>
+                <div class="mutual-friends">
+                    <img src="avatar.jpg" alt="Mutual Friend 1">
+                    <img src="avatar.jpg" alt="Mutual Friend 2">
+                    +8 more mutual friends
+                </div>
+            <div class="friend-buttons">
+                <button onclick="showAdd()">Add</button>
+                <button onclick="showRemove()">Remove</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="friend">
+        <img src="avatar.jpg" alt="Friend 1" onclick="navigateProfile()">
+        <div class="friend-details">
+            <span class="user">User Name 4</span>
+                <div class="mutual-friends">
+                    <img src="avatar.jpg" alt="Mutual Friend 1">
+                    <img src="avatar.jpg" alt="Mutual Friend 2">
+                    +8 more mutual friends
+            </div>
+            <div class="friend-buttons">
+                <button onclick="showAdd()">Add</button>
+                <button onclick="showRemove()">Remove</button>
+            </div>
+        </div>
+   </div>
+   </div>
+
+    <!-- More friends go here -->
+
+    <script>
+  
+    function navigateToPage(page) {
+        const pages = ['home', 'friends', 'notifications', 'groups', 'chat', 'tv', 'search', 'menu'];
+        if (pages.includes(page)) {
+            window.location.href = `${page}.html`;
+        } else {
+            console.log(`Navigate to ${page} page`);
+        }
+    }
+    
+        function showFriends() {
+            // Add logic to show friends
+            alert('Friends');
+        }
+
+        function showRequests() {
+            // Add logic to show friend requests
+            alert('Requests');
+        }
+
+        function showAdd() {
+            alert('Add');
+        }
+
+        function showRemove() {
+            alert('Remove');
+        }
+        
+       function navigateProfile() {
+       	window.location.href = 'profile.html'; // Link to the profile page
+       	}
+       
+    </script>
+</body>
+</html>

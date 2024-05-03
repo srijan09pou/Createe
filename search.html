@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+        /* Add styles for the search page as needed */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        .search-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #f0f2f5; /* Match the background color of your page */
+            padding: 1px;
+            border-radius: 25px; /* Adjust as needed for the rounded corners */
+            border: 5px solid #ddd;
+        }
+
+        .back-icon {
+            font-size: 20px;
+            margin-right: 8px;
+            color: #65676b; /* Facebook search icon color */
+            cursor: pointer;
+        }
+
+        .search-input {
+            flex: 1;
+            width: 90%;
+            border: none;
+            padding: 8px;
+            margin-right: 8px;
+        }
+
+        .search-button {
+            background-color: #1877f2; /* Facebook blue color */
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+.search-box img {
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    margin-left: 5px; /* Adjust the margin as needed */
+}
+        /* You can add more styles based on your design */
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <div class="search-box">
+            <img src="back.png" alt="public" onclick="goBack()" >
+            <input type="text" class="search-input" id="searchInput" placeholder="Search ">
+            <img src="search.png" alt="Search"  onclick="openSearchBox()" style="width: 24px; height: 24px; margin-right: 10px;" >
+        </div>
+    </div>
+
+    <!-- Additional content for the search page if needed -->
+
+    <script>
+        function performSearch() {
+            var searchTerm = document.getElementById("searchInput").value;
+            // Add logic to handle the search term, e.g., redirect to search results page
+            console.log("Performing search for: " + searchTerm);
+            // You may use window.location.href to navigate to the search results page
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

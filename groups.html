@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* Global styles */
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            align-items: center;
+            background-color: #57CE00;
+        }
+        
+        /* First Part */
+
+        /* Header styles */
+        header {
+            background-color: #fff;
+            color: #fff;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h4 {
+            font-size: 20px;
+            margin: 0;
+            padding: 10px;
+            font-weight: bold;
+            color: #FF8A00;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        /* Navigation icons styles */
+        .nav-icons {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            background-color: #fff;
+            color: #fff;
+            padding: 10px 0;
+            margin-bottom: 3px;
+        }
+
+        .nav-icons img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        
+        /* First Part End */
+       
+        /* Vidop buttons styles */
+        
+        .vidopscroll {
+        	overflow-x: auto;
+            display: flex;
+        }
+        
+.vidop {
+    display: flex;
+    height: 45px; 
+    background-color: #fff;
+    margin-top: 3px; 
+    margin-bottom: 3px; /* Adjust the margin as needed */
+}
+
+.vidop button {
+    background-color: #4267B2;
+    color: #fff;
+    width: 120px;
+    height: 30px; /* Adjust the height as needed */    
+    margin-right: 4px;
+    margin: 8px 6px;
+    border-radius: 15px; /* Make the edges circular */
+    cursor: pointer;
+}
+
+
+.vidop button:hover {
+    background-color: #29487d;
+}
+
+/* Third Part*/
+        .story-scroll-container {
+            overflow-x: auto;
+            display: flex;
+            height: 145px;
+            margin-bottom: 3px;
+            margin-top: 3px;
+            background-color: #fff; 
+        }
+        
+        .story-container {
+    display: flex;
+}
+
+        .story-box {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            width: 90px;
+            margin-top: 11px;
+            height: 100px;
+            margin-left: 2px;
+            margin-right: 3px;
+            cursor: pointer;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            border: 1px solid #29487d;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .story-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .add-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #4CAF50; /* Green background color */
+    border-radius: 50%; /* Make it circular */
+    text-decoration: none; /* Remove default underline styling for anchor */
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+        
+        .user-infos {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #FF001E;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex; /* Use flexbox to align items in a row */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Center items horizontally */
+    text-align: center;
+    font-size: 12px; /* Adjust the font size as needed */
+}
+         /* Third Part End */
+
+       .notification {
+    border: 1px solid #ddd;
+    margin-bottom: -5px; /* Adjust the margin as needed */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    height: 50px;
+}
+
+/* Post styles */
+        .post {
+            background-color: #fff;
+            width: 100%;
+            margin-bottom: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        /* Your existing styles */
+        .user-info {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+.user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        
+        .details {
+            display: flex;
+            flex-direction: column;
+            margin-right: auto;
+        }
+
+.details span {
+            font-weight: bold;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        
+        .options {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .metadata img {
+    width: 17px;
+    height: 17px;
+    margin-left: 10px;
+}
+        
+         .post-content {
+            padding: 10px;
+        }
+        
+        .post-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        
+        .post-actions {
+            display: flex;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .post-actions img {
+    width: 20px;
+    height: 20px;
+}
+
+        .action-box {
+        	display: flex;
+            height: 15px;
+            width: 100px;            
+            padding: 10px;
+            cursor: pointer;
+            margin-left: 5px;
+            line-height: 35px;  
+            margin-right: 5px;
+            align-items: center;
+            border-radius: 20px;            
+            border: 3px solid #ddd;
+            justify-content: space-around; /* Add space around children */
+        }
+
+        .action-box i {
+            margin-right: 5px;
+        }
+
+        .action-box.active {
+            background-color: #4267B2;
+            color: #fff;
+        }
+
+        /* Add these styles for the modal input and button */
+.modal-input {
+    /* Your styles for modal input */
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+        .profile-pic img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .notification-details {
+            flex-grow: 1;
+        }
+
+        .notification-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .join-button {
+            padding: 10px;
+            border: none;
+            background-color: #4267B2;
+            color: #fff;
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 470px;
+            left: 180px;
+            width: 358px;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border-radius: 10px;
+            border: 1px solid #000000;
+        }
+        
+        .omodal {
+            display: none;
+            position: fixed;
+            top: 450px;
+            left: 180px;
+            width: 358px;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border-radius: 10px;
+            border: 1px solid #000000;
+        }
+
+        .modal-option:hover {
+            background-color: #f0f2f5;
+        }
+
+.modal-input {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-button {
+    padding: 10px;
+    background-color: #4267B2;
+    color: #fff;
+    border: none;
+    margin-bottom: 15px; 
+    margin-left: 20px; 
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.options img {
+    width: 28px;
+    height: 28px;
+}
+
+.option-item {
+	display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-left: 25px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.option-detailed {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.option-detaileds {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.option-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    height: auto; 
+}
+
+
+    </style>
+    
+</head>
+<body>
+
+<header>
+    <h4>facebook</h4>
+    <div class="brand">
+        <img src="search.png" alt="Search" onclick="navigateToPage('search')">
+        <img src="menu.png" alt="Menu" onclick="navigateToPage('menu')">
+    </div>
+</header>
+
+<div class="nav-icons">
+    <img src="home.png" alt="Home" onclick="navigateToPage('home')">
+    <img src="friends.png" alt="Friends" onclick="navigateToPage('friends')">
+    <img src="chat.png" alt="Chat" onclick="navigateToPage('chat')">
+    <img src="tv.png" alt="TV" onclick="navigateToPage('tv')">
+    <img src="notifications.png" alt="Notifications" onclick="navigateToPage('notifications')">
+    <img src="group1.png" alt="Groups" onclick="navigateToPage('groups')">
+</div>
+
+<header>
+    <h4>Groups</h4>
+    <div class="brand">
+    	<img src="create.png" alt="Menu" onclick="navigateToPage('menu')">
+        <img src="search.png" alt="Search" onclick="navigateToPage('search')">
+    </div>
+</header>
+
+             <div class="vidopscroll">
+             	<div class="vidop">
+             <button>For You</button>
+             <button>Your Groups</button>
+             <button>Discover</button>
+             <button>Invited</button>
+             </div>
+             </div>
+     
+    <!-- Third Part -->
+     	<div class="story-scroll-container">
+    	<div class="story-container">
+        <div class="story-box" id="story-box-A" onclick="addImage('post-image', 'preview-image-B')">
+            <img class="preview-image" alt="Post Preview" id="preview-image-A">
+            <div class="user-infos">
+                <img src="user0-avatar.jpg" alt="Create" >
+                Create
+            </div>
+<div class="add-button">+</div>
+        </div>
+
+        <div class="story-box" id="story-box-B">
+            <img class="preview-image" alt="Post Preview" id="preview-image-B">
+        
+         <div class="user-infos">
+                <img src="user2-avatar.jpg" alt="User B" >
+                Group B
+            </div>
+            </div>
+            
+
+ 
+        <div class="story-box" onclick="showStory('User C')">
+            <div class="user-infos">
+                <img src="user3-avatar.jpg" alt="User C" >
+                Group C
+            </div>
+        </div>
+        <div class="story-box" onclick="showStory('User D')">
+            <div class="user-infos">
+                <img src="user4-avatar.jpg" alt="User D" >
+                Group D
+            </div>
+        </div>
+        <!-- Add more story boxes as needed -->
+  
+    <input type="file" id="post-image" name="post-image" accept="image/*" onchange="previewImage('post-image', 'preview-image-A')">
+</div>
+</div>
+     	
+     <!-- Third Part  End -->
+     	
+     
+     <div class="post">
+        <div class="user-info">
+        	<img src="avatar.jpg" class="useravatar"  alt="Profile Icon" id="profile-icon" onclick="openProfilePage()">
+            <div class="details">
+                <span class="username" onclick="window.location='#'">Srijan Poudel</span>
+                <div class="metadata">
+                    1 d
+                   <img src="public.png" alt="public" >
+                </div>
+            </div>
+    <!-- Sample Post 1 -->
+    
+            <div class="options" >
+                <img src="option.png" alt="option" onclick="toggleOptionsMenu(1)" id="OptionsMenu_1">
+                <img src="close.png" alt="close" >
+            </div>
+        </div>
+        <div class="post-content">
+            <p>This is a sample post.</p>
+            <img class="post-image" src="avatar.jpg" alt="Post Image">
+        </div>
+        
+       
+        <div class="post-actions">
+            <div class="action-box" onclick="toggleLike(1)" id="likeButton_1">
+                <img src="like.png" alt="like"  >
+            </div>
+            <div class="action-box" onclick="toggleCommentModal(1)" id="CommentButton_1">
+                <img src="comment.png" alt="comment" >
+            </div>
+            <div class="action-box" onclick="shareButtonClicked(1)" ondblclick="closeShareOptions(1);">
+                <img src="share.png" alt="share" >
+            </div>
+        </div>
+    </div>
+
+    <!-- Comment Modal for Post 1 -->
+    <div id="commentModal_1" class="modal">
+        <input type="text" class="modal-input" placeholder="Write a comment...">
+        <button class="modal-button" onclick="closeCommentModal(1)">Post Comment</button>
+        <!-- ... Your existing modal content ... -->
+    </div>
+    <!-- Options Modal for Post 1 -->
+    <div id="optionsModal_1" class="omodal">
+    	 <div class="opt">
+
+    
+    <div class="option-item" onclick="saveAction()">
+      <img src="/storage/emulated/0/htdocs/save.png" alt="Friends"  onclick="openSearchBox()" >
+      <div>
+      <div class="option-detailed"><span>Save post</span></div>
+      <div class="option-detaileds"><span>Add this to your saved items.</span></div>
+    </div></div>
+    <div class="option-item" onclick="reportAction()">
+      <img src="/storage/emulated/0/htdocs/hide.png" alt="Report"  >
+      	<div>
+      <div class="option-detailed"><span>Hide post</span></div>
+      <div class="option-detaileds"><span>See fewer post like this.</span></div>
+      </div></div>
+      <div class="option-item" onclick="reportAction()">
+      <img src="/storage/emulated/0/htdocs/report.png" alt="Report"  >
+      	<div>
+      <div class="option-detailed"><span>Report post</span></div>
+      <div class="option-detaileds"><span>We wont let user know who reported this.</span></div>
+      </div></div>
+      <div class="option-item" onclick="reportAction()">
+      <img src="/storage/emulated/0/htdocs/notifications.png" alt="Report"  >
+      	<div>
+      <div class="option-detailed"><span>Turn on Notifications for this post</span></div>
+      </div></div>
+      <div class="option-item" onclick="reportAction()">
+      <img src="/storage/emulated/0/htdocs/link.png" alt="Report"  >
+      	<div>
+      <div class="option-detailed"><span>Copy Link</span></div>
+      </div></div>
+      <div class="option-item" onclick="followAction()">
+      <img src="/storage/emulated/0/htdocs/follow.png" alt="Friends"  onclick="openSearchBox()" >
+      	<div>
+      <div class="option-detailed"><span>Follow user</span></div>
+      <div class="option-detaileds"><span>Stop seeing post but stay friends.</span></div>
+    </div></div>
+        <button class="modal-button" onclick="closeOptionsMenu(1)">Cancel</button>
+        <!-- ... Your existing modal content ... -->
+    </div></div></div>
+
+
+    <!-- Share Options for Post 1 -->
+    <div id="shareOptions_1" class="modal" style="display: none;">
+    <div class="option-item" onclick="shareOnFacebook()">
+      <img src="/storage/emulated/0/htdocs/edited.png" alt="facebook"  onclick="openFacebookBox()" >
+      <span class="option-text">Share on Facebook</span>
+    </div>
+    <div class="option-item" onclick="shareOnFacebook()">
+      <img src="/storage/emulated/0/htdocs/sharef.png" alt="facebook"  onclick="openFacebookBox()" >
+      <span class="option-text">Share on Friend's Profilr</span>
+    </div>
+    <div class="option-item" onclick="shareOnGroup()">
+      <img src="/storage/emulated/0/htdocs/group.png" alt="Group"  onclick="openSearchBox()" >
+      <span class="option-text">Share on Group</span>
+    </div>
+    <div class="option-item" onclick="shareOnMessenger()">
+      <img src="/storage/emulated/0/htdocs/chat.png" alt="Chat"  onclick="openSearchBox()" >
+      <span class="option-text">Share on Messenger</span>
+    </div>
+    <div class="option-item" onclick="showMoreOptions()">
+      <img src="/storage/emulated/0/htdocs/option.png" alt="option" >
+      <span class="option-text">More</span>
+    </div>
+      <div class="option-item" onclick="shareOnPage()">
+      <img src="/storage/emulated/0/htdocs/whatsapp.png" alt="Page"  onclick="openSearchBox()" >
+      <span class="option-text">Share on Whatsapp</span>
+    </div>
+        <button class="modal-button" onclick="closeShareOptions(1)">Cancel</button>
+        <!-- ... Your existing modal content ... -->
+    </div>
+
+
+
+             <main>
+        <div class="notification">
+            <div class="profile-pic">
+                <img src="avatar.jpg" alt="Profile Picture">
+            </div>
+            <div class="notification-details">
+                <p>Group 1 </p>
+                <p>Greater Nepal</p>
+            </div>
+            <div class="notification-actions">
+                <button class="join-button" onclick="joinEvent()">Join</button>
+            </div>
+        </div>
+
+        <!-- More notification items go here -->
+
+    </main>
+    <main>
+        <div class="notification">
+            <div class="profile-pic">
+                <img src="avatar.jpg" alt="Profile Picture">
+            </div>
+            <div class="notification-details">
+                <p>Group 2 </p>
+                <p>Vegan for life</p>
+            </div>
+            <div class="notification-actions">
+                <button class="join-button" onclick="joinEvent()">Join</button>
+            </div>
+        </div>
+
+        <!-- More notification items go here -->
+
+    </main>
+    <main>
+        <div class="notification">
+            <div class="profile-pic">
+                <img src="avatar.jpg" alt="Profile Picture">
+            </div>
+            <div class="notification-details">
+                <p>Group 3</p>
+                <p>Save nature</p>
+            </div>
+            <div class="notification-actions">
+                <button class="join-button" onclick="joinEvent()">Join</button>
+            </div>
+        </div>
+
+        <!-- More notification items go here -->
+
+    </main>
+    <main>
+        <div class="notification">
+            <div class="profile-pic">
+                <img src="avatar.jpg" alt="Profile Picture">
+            </div>
+            <div class="notification-details">
+                <p>Group 4 </p>
+                <p>Humanity</p>
+            </div>
+            <div class="notification-actions">
+                <button class="join-button" onclick="joinEvent()">Join</button>
+            </div>
+        </div>
+
+        <!-- More notification items go here -->
+
+    </main>
+    <main>
+        <div class="notification">
+            <div class="profile-pic">
+                <img src="avatar.jpg" alt="Profile Picture">
+            </div>
+            <div class="notification-details">
+                <p>Group 5 </p>
+                <p>Morality</p>
+            </div>
+            <div class="notification-actions">
+                <button class="join-button" onclick="joinEvent()">Join</button>
+            </div>
+        </div>
+
+        <!-- More notification items go here -->
+
+    </main>
+             
+             <script>
+
+function navigateToPage(page) {
+        const pages = ['home', 'friends', 'notifications', 'groups', 'chat', 'tv', 'search', 'menu'];
+        if (pages.includes(page)) {
+            window.location.href = `${page}.html`;
+        } else {
+            console.log(`Navigate to ${page} page`);
+        }
+    }
+
+    function openMenu() {
+            window.location.href = 'menu.html'; // Redirect to the menu page
+        }
+                
+        function openSearchBox() {
+        // Add logic to open the search box or navigate to the search page
+        window.location.href = 'search.html'; // Redirect to the search page
+    }
+
+             function joinEvent() {
+            // Add logic for joining the event
+            alert('Joining the event');
+        }
+        
+        function toggleLike(postId) {
+            var likeButton = document.getElementById('likeButton_' + postId);
+            likeButton.classList.toggle('active');
+        }
+
+function toggleCommentModal(postId) {
+    var modal = document.getElementById('commentModal_' + postId);
+    modal.style.display = (modal.style.display === 'block') ? 'none' : 'block';
+
+  // Toggle body scrolling
+    toggleBodyScrolling();
+}
+
+function toggleOptionsMenu(postId) {
+    var modal = document.getElementById('optionsModal_' + postId);
+    modal.style.display = (modal.style.display === 'block') ? 'none' : 'block';
+
+    // Toggle body scrolling
+    toggleBodyScrolling();
+}
+
+function shareButtonClicked(postId) {
+    var shareOptions = document.getElementById('shareOptions_' + postId);
+    shareOptions.style.display = (shareOptions.style.display === 'block') ? 'none' : 'block';
+
+    // Toggle body scrolling
+    toggleBodyScrolling();
+}
+
+function toggleBodyScrolling() {
+    var body = document.body;
+    body.style.overflow = (body.style.overflow === 'hidden') ? 'auto' : 'hidden';
+}
+
+        function closeShareOptions(postId) {
+    var shareOptions = document.getElementById('shareOptions_' + postId);
+    shareOptions.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    document.body.style.position = 'static';
+}
+
+        function closeCommentModal(postId) {
+    var modal = document.getElementById('commentModal_' + postId);
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    document.body.style.position = 'static';
+}
+
+        function closeOptionsMenu(postId) {
+    var modal = document.getElementById('optionsModal_' + postId);
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    document.body.style.position = 'static';
+}
+
+        
+</script>
+
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        header {
+            background-color: #4267B2;
+            color: #fff;
+            padding: 1%;
+            text-align: center;              
+        }
+
+        header .back-icon {
+            margin-right: 10px;
+        }
+        
+        .profile-container {
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .cover-photo {
+            width: 360px;
+            height: 170px; 
+            background-color: #1877f2; /* Facebook's blue color */            
+            position: relative; /* Add this line */
+        }
+        
+        .cover-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative; /* Add this line */
+            transform: translateY(-55%); /* Add this line */
+            margin-left: 33px;
+            object-fit: cover;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+         .user-info {
+            text-align: left;
+            margin-left: 43px; 
+            margin-top: -100px; 
+          }
+    
+        .user-info h1 {
+            color: #333;
+            margin-left: -24px;
+        }
+  
+        .button {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 10px;
+        }
+        
+        .button img {
+            display: flex;
+            width: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 20px;
+        }
+
+        .add,
+        .edit,
+        .more {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000;
+            margin: 5px;
+            cursor: pointer;
+            
+            box-sizing: border-box;
+        }
+
+        .add {
+            width: 350px;
+            height: 40px;
+        }
+        
+        .but {
+        	display: flex;
+        }
+        
+        .edit {
+            width: 290px;
+            height: 40px;
+        }
+        
+        .more {
+            width: 50px;
+            height: 40px;
+        }
+
+        .Friends {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .Friends button {
+            width: 48%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .friend-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: calc(33.33% - 10px);
+            height: 100px;
+            border: 1px solid #000;
+            text-align: left;
+            margin-bottom: 10px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-tabs {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab:hover {
+            background-color: #f0f0f0;
+        }
+
+        .tab-content {
+            margin-top: 20px;
+        }
+
+        .post {
+        	margin-left: 20px;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+
+        .post:last-child {
+            border-bottom: none;
+        }
+
+        .post h2 {
+            margin: 0;
+            color: #333;
+        }
+
+        .post p {
+            color: #555;
+        }
+
+        .back-icon img {
+            width: 20px;
+            height: 20px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-top: 6px;
+        }
+
+        .post-buttons {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            height: 35px;
+        }
+        
+        .about {
+        	height: 30px;
+            width: 320px;
+            margin: 5px 20px;
+            text-align: center;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border: 1px solid black;
+          }
+          
+          .info {
+        	height: 30px;
+            width: 320px;
+            margin: 5px 10px;
+            align-items: center; 
+           }
+	
+	/* Second Part*/
+	
+	.posting {
+            height: 100px;
+            background-color: #fff;
+        	}
+        
+        .second {
+        	display: flex;
+            height: 60px;
+            background-color: #fff;
+        	}
+        
+        #profile-icon {
+            border-radius: 50%;
+            margin-top: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;         
+            margin-left: 15px;
+            margin-right: 5px;   
+        }
+
+        #post-text {          
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            margin-top: 10px;
+            width: 240px;
+            height: 40px;
+            cursor: pointer;         
+            margin-left: 5px;
+            margin-right: 7px;   
+        }
+
+        #image-input {
+        	width: 30px;
+            height: 30px;
+            cursor: pointer;         
+            margin-left: 5px;
+            margin-top: 20px;
+        }
+        
+        .second1 {
+        	display: flex;
+            height: 60px;
+            margin: 0px 35px;
+            background-color: #fff;
+            justify-content: space-between;
+        	}
+        
+        .sec {
+        	display: flex;
+             flex-direction: row;
+             width: auto;
+            height: 40px;
+            align-items: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            cursor: pointer;       
+        	}
+        
+        .sec span {
+             margin-right: 5px;
+         }
+        
+        #image {
+        	width: 20px;
+            height: 20px;
+            margin: 10px 5px;
+        }
+        
+        /* Second Part End */
+    </style>
+</head>
+<body>
+	<header>
+    	<div class="post-buttons">
+            <span class="back-icon"><img src="back.png" alt="public" onclick="goBack()" ></span>     
+            <span>Profile</span>   
+        </div>
+    </header>
+    <div class="profile-container">
+   <div class="cover-photo">
+            <img src="https://example.com/your-cover-photo.jpg" alt="Cover Photo">
+        </div>
+    
+        <div class="profile-picture">
+            <img src="avatar.jpg" alt="Profile Picture">
+        </div>
+
+        <div class="user-info">
+            <h1>Your Name</h1>
+        </div>
+
+        <div class="button">
+            <div class="add"><img src="add.png" alt="Add Icon">Add to Story </div>
+            <div class="but">
+            <div class="edit"><img src="edit.png" alt="Edit Icon">Edit Profile </div>
+            <div class="more">•••</div>
+        </div>
+        </div>
+<div class="info">See User's About  info</div>
+        <div class="Friends">
+            <button class='A'>Friends</button>
+            <button class='B'>See all</button>
+        </div>
+
+        <!-- Add six images below the Friends section -->
+        <div class="friend-images">
+            <div class="box">
+                <img src="avatar.jpg" alt="Friend 1">
+            </div>
+            <div class="box">
+                <img src="avatar.jpg" alt="Friend 2">
+            </div>
+            <div class="box">
+                <img src="avatar.jpg" alt="Friend 3">
+            </div>
+            <div class="box">
+                <img src="avatar.jpg" alt="Friend 4">
+            </div>
+            <div class="box">
+                <img src="avatar.jpg" alt="Friend 5">
+            </div>
+            <div class="box">
+                <img src="avatar.jpg" alt="Friend 6">
+            </div>
+        </div></div>
+        <p class="about">See all Friends</p>
+        
+        <div class="posting">
+    <div class="second">
+    <img src="" alt="Avatar" class="avatar" alt="Profile Icon"  id="profile-icon"  onclick="openProfilePage()">
+    <label for="post-text"><input type="text" id="post-text" placeholder="What's on your mind?"></label>
+    <label for="image-input"><img src="camera.png" alt="camera" id="image-input"  onclick="navigateToSharePost()" ></label>
+    <input type="file" id="image-input" accept="image/*" style="display: none;" onchange="handleImageChange(this.files)">
+    </div>
+<div class="second1">
+<div class="sec"><img src="img.png" alt="camera" id="image"  onclick="navigateToSharePost()" ><span>Add</span></div>
+<div class="sec"><img src="location.png" alt="camera" id="image"  onclick="navigateToSharePost()" ><span>Location</span></div>
+<div class="sec"><img src="page1.png" alt="camera" id="image"  onclick="navigateToSharePost()" ><span>Events</span></div>
+    </div></div>
+        
+        <div class="profile-tabs">
+            <div class="tab" onclick="showTab('posts')">Posts</div>
+            <div class="tab" onclick="showTab('photos')">Photos</div>
+            <div class="tab" onclick="showTab('Videos')">Videos</div>
+            </div>
+
+        <div class="tab-content" id="posts">
+            <div class="post">
+                <h2>Post Title 1</h2>
+                <p>This is the content of the post.</p>
+            </div>
+            <div class="post">
+                <h2>Post Title 2</h2>
+                <p>More content for another post.</p>
+            </div>
+        </div>
+
+        <div class="tab-content" id="photos" style="display: none;">
+            <!-- Photo gallery or album content goes here -->
+        </div>
+
+        <div class="tab-content" id="videos" style="display: none;">
+            <!-- Videos list or other videos-related content goes here -->
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            // You can customize this function based on your navigation needs
+            window.history.back();
+        }
+
+        function showTab(tabName) {
+            const tabs = ['posts', 'photos', 'videos'];
+            tabs.forEach(tab => {
+                const content = document.getElementById(tab);
+                content.style.display = tab === tabName ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+
+</html>
+
