@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Post</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #post-form {
+            width: 95%;
+            margin: 20px auto;
+            padding: 10px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #caption-input {
+            width: 95%;
+            padding: 10px;
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+        #media-preview {
+            width: 95%;
+            height: 150px;
+            margin: auto;
+            overflow-y: auto;
+            border: 3px solid #FF4B00;
+        }
+
+        #media-preview img,
+        #media-preview video {
+            max-width: 50%;
+            max-height: auto;
+            width: 50%;
+            height: auto;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border: 3px solid #FF4B00;
+            display: block;
+        }
+
+        .remove-button {
+            background: #56AC00;
+            border: none;
+            color: #f00;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+            color: #fff;
+            bottom: 30px;
+            left: 45%;
+            z-index: 1;
+        }
+
+        .media-input {
+            display: none;
+        }
+
+        #media-inputs {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            align-items: center;
+            margin: 20px 10px;
+            border: 2px solid #000000;
+        }
+
+        .option {
+            display: flex;
+            outline: 2px solid #DB00FF;
+            outline-offset: 2px;
+            width: 255px;
+            align-items: center;
+            cursor: pointer;
+            margin: 10px;
+            border: 2px solid #000000;
+        }
+
+        .option img {
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+            border: 2px solid #000000;
+            border-radius: 50%;
+        }
+
+        .option span {
+            font-size: 17px;
+            color: #333;
+            margin: 5px;
+        }
+        
+        #post-button {
+            display: block;
+            padding: 10px 20px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 95%;
+            height: 30px;
+            margin: 20px 8;
+            background: #DB00FF;
+            bottom: 10px;
+            position: relative;
+        }
+
+        #post-button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Share Post Page</h1>
+    <form id="post-form">
+        <input type="text" id="caption-input" placeholder="Enter caption" aria-label="Caption">
+        <div id="media-preview"></div>
+        <div class="options">
+            <div class="option" id="media-inputs" onclick="document.getElementById('file-input').click()" aria-label="Add Media">
+                <input type="file" id="file-input" class="media-input" accept="image/*, video/*" style="display: none;">
+                <img src="add_media_icon.png" alt="Add Media Icon">
+                <span>Photo/Video</span>
+            </div>
+            <div class="option" id="b-inputs" aria-label="Add Media">
+                <input type="file" id="b-input" class="media-input" accept="image/*, video/*" style="display: none;">
+                <img src="add_media_icon.png" alt="Add Media Icon">
+                <span>Tag Friends</span>
+            </div>
+            <div class="option" id="c-inputs" aria-label="Add Media">
+                <input type="file" id="c-input" class="media-input" accept="image/*, video/*" style="display: none;">
+                <img src="add_media_icon.png" alt="Add Media Icon">
+                <span>Add Location</span>
+            </div>
+            <div class="option" id="d-inputs"  aria-label="Add Media">
+                <input type="file" id="d-input" class="media-input" accept="image/*, video/*" style="display: none;">
+                <img src="add_media_icon.png" alt="Add Media Icon">
+                <span>Feeling/Activity</span>
+            </div>
+        </div>
+        <button type="button" id="post-button" onclick="postMedia()">Post</button>
+    </form>
+
+    <script>
+        function postMedia() {
+    try {
+        const caption = document.getElementById('caption-input').value;
+        const mediaUrls = [];
+        const mediaTypes = [];
+        const previews = document.getElementById('media-preview').children;
+
+        for (let preview of previews) {
+            if (preview.tagName === 'IMG') {
+                mediaUrls.push(preview.src);
+                mediaTypes.push('image');
+            } else if (preview.tagName === 'VIDEO') {
+                mediaUrls.push(preview.src);
+                mediaTypes.push('video');
+            }
+        }
+
+        // Check if there is at least a caption or a media
+        if (caption.trim() === '' && mediaUrls.length === 0) {
+            alert('Please add a caption or select a media file.');
+            return; // Prevent navigation
+        }
+
+        if (mediaUrls.length === 0) {
+            // Proceed with only caption
+            localStorage.setItem(`caption_0`, caption);
+            localStorage.setItem('mediaCount', 0);
+        } else {
+            for (let i = 0; i < mediaUrls.length; i++) {
+                localStorage.setItem(`caption_${i}`, caption);
+                localStorage.setItem(`mediaUrl_${i}`, mediaUrls[i]);
+                localStorage.setItem(`mediaType_${i}`, mediaTypes[i]);
+                localStorage.setItem('mediaCount', mediaUrls.length);
+            }
+        }
+
+        window.location.href = 'home.html';
+    } catch (error) {
+        console.error('An error occurred:', error);
+        alert('An error occurred while posting. Please try again.');
+    }
+}
+
+        function previewMedia(event) {
+            const preview = document.getElementById('media-preview');
+            const file = event.target.files[0];
+
+            if (file.type.startsWith('image/')) {
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(file);
+                const removeBtn = createRemoveButton();
+                img.addEventListener('mouseenter', () => removeBtn.style.display = 'block');
+                img.addEventListener('mouseleave', () => removeBtn.style.display = 'none');
+                preview.appendChild(img);
+                preview.appendChild(removeBtn);
+            } else if (file.type.startsWith('video/')) {
+                const video = document.createElement('video');
+                video.src = URL.createObjectURL(file);
+                video.controls = true;
+                const removeBtn = createRemoveButton();
+                video.addEventListener('mouseenter', () => removeBtn.style.display = 'block');
+                video.addEventListener('mouseleave', () => removeBtn.style.display = 'none');
+                preview.appendChild(video);
+                preview.appendChild(removeBtn);
+            }
+        }
+
+        function createRemoveButton() {
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = '\u00D7'; // Close icon
+            removeBtn.classList.add('remove-button');
+            removeBtn.addEventListener('click', function() {
+                const mediaElement = removeBtn.previousElementSibling;
+                const parent = mediaElement.parentNode;
+                parent.removeChild(mediaElement);
+                parent.removeChild(removeBtn);
+            });
+            removeBtn.addEventListener('mouseenter', function() {
+                removeBtn.style.display = 'block';
+            });
+            removeBtn.addEventListener('mouseleave', function() {
+                removeBtn.style.display = 'none';
+            });
+            return removeBtn;
+        }
+
+        // Add event listener to the file input to handle file selection
+        document.getElementById('file-input').addEventListener('change', previewMedia);
+    </script>
+</body>
+</html>
