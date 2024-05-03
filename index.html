@@ -5,38 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        
-       @media (max-width: 600px) {
-        /* Styles for screens up to 600px wide */
-       }
-
-       @media (min-width: 601px) and (max-width: 1024px) {
-        /* Styles for screens between 601px and 1024px wide */
-       }
-
-       @media (min-width: 1025px) {
-        /* Styles for screens wider than 1024px */
-       }
-        
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f0f2f5;
+        body, html {
+            width: 100%;
+            height: 100%;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            align-items: center;
+            background-color: #57CE00;
         }
 
         .login-container {
             background-color: #fff;
-            padding: 20px;
             width: 100%;
             height: auto;
-            border-radius: 8px;
             text-align: center;
             border: 1px solid #000000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         form {
@@ -46,74 +32,72 @@
         }
 
         .logo img {
-            width: 80px;
-            height: 77px;
+            width: 25%;
+            height: auto;
             max-width: 100%;
             height: auto;
-            margin-top: 70px;
-            margin-bottom: 70px;
+            margin-top: 20%;
+            margin-bottom: 20%;
         }
 
         input {
-            padding: 12px;
-            width: 100%;
-            height: 80px;
-            font-size: 15px;
-            margin-bottom: 20px;
+            width: 90%;
+            height: auto;
+            padding: 8%;
+            font-size: 100%;
+            margin: 2% 5%;
             border-radius: 10px;
             box-sizing: border-box;
         }
         
         .password-toggle {
-            position: absolute;
-            right: 35px;
+            position: relative;
+            right: -112px;
             cursor: pointer;
-            transform: translateY(440%);
+            transform: translateY(-240%);
             z-index: 1;
-            margin-top: 25px;
             color: #007bff;
-        }
+        }        
 
         .password-toggle img {
-            width: 20px; /* Adjust the size of the icon as needed */
+            width: 7%; /* Adjust the size of the icon as needed */
             height: auto;
             color: #fff;
+            cursor: pointer;
         }
-        
+
         button {
-            width: 100%;
-            padding: 20px;
+            width: 90%;
+            height: auto;
+            padding: 5%;
+            margin: 2% 5%;
             background-color: #4267B2;
             color: white;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 30px;
         }
 
         .error-message {
             color: #dc3545;
-            margin-top: 5px;
+            margin-top: 5%;
         }
 
         .create {
-            width: 100%;
-            height: 60px;
-            border-radius: 30px;
-            margin-top: 80px;
-            margin-bottom: 5px;
+            width: 90%;
+            height: auto;
+            border-radius: 50px;
+            margin-top: 30%;
+            font-size: 100%;
             border: 1px solid #000000;
         }
 
-        .create p {
-            text-align: center;
-            margin: 20px;
-        }
-
         .com {
+        	width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 15px;
-            margin: 5px;
+            font-size: 100%;
+            margin: 5%;
         }
 
         .com img {
@@ -123,8 +107,7 @@
         }
 
         .com span {
-            font-size: 20px;
-            margin: 0 10px;
+            margin-left: 5%;
         }
 
     </style>
@@ -187,4 +170,4 @@
         }
     </script>
 </body>
-    </html>
+</html>
