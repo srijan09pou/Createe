@@ -2,78 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Tv</title>
     <style>
-        /* Global styles */
-        body, html {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            font-family: Arial, sans-serif;
-            justify-content: center;
-            align-items: center;
-            background-color: #57CE00;
-        }
-        
-        /* First Part */
 
-        /* Header styles */
-        header {
-            background-color: #fff;
-            color: #fff;
-            padding: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h4 {
-            font-size: 20px;
-            margin: 0;
-            padding: 10px;
-            font-weight: bold;
-            color: #FF8A00;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-        }
-
-        .brand img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
-
-        /* Navigation icons styles */
-        .nav-icons {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            background-color: #fff;
-            color: #fff;
-            padding: 10px 0;
-            margin-bottom: 3px;
-        }
-
-        .nav-icons img {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-        }
-        
-        /* First Part End */
-        
         /* Second Part */
 .vidop-scroll-container {
             overflow-x: auto;
             display: flex;
             background-color: #fff;
-            margin-top: 3px;
+            margin: 3px 0;
         }
 
         .vidop-container {
@@ -103,107 +43,19 @@
 }
 
 .vidop-info img{
-    width: 5px;
+    width: 20px;
     height: auto;
+    margin-right: 5px;
 }
 
 
 /* Second Part End*/
 
-        .post {
-            background-color: #fff;
-            width: 100%;
-            margin: 3px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .user-info {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-.user-info img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-            cursor: pointer;
-        }
-        
-        .details {
-            display: flex;
-            flex-direction: column;
-            margin-right: auto;
-        }
-
-.details span {
-            font-weight: bold;
-            margin-bottom: 5px;
-            cursor: pointer;
-        }
-        
-        .options {
-            margin-left: 10px;
-            cursor: pointer;
-        }
-        
-          .metadata {
-    font-size: 13px;
-}
-
-        .metadata img {
-    width: 13px;
-    height: 13px;
-    margin-left: 10px;
-}
-        
-         .post-content {
-            padding: 10px;
-        }
-        
-        .post-actions {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            border-top: 1px solid #ddd;
-        }
-        
-        .post-actions img {
-    width: 24px;
-    height: 24px;
-}
-
-        .action-box {
-        	display: flex;
-            height: 15px;
-            width: 100px;            
-            padding: 10px;
-            cursor: pointer;
-            margin-left: 5px;
-            line-height: 35px;  
-            margin-right: 5px;
-            align-items: center;
-            border-radius: 20px;            
-            border: 3px solid #ddd;
-            justify-content: space-around; /* Add space around children */
-        }
-
-        .action-box i {
-            margin-right: 5px;
-        }
-
-        .action-box.active {
-            background-color: #4267B2;
-            color: #fff;
-        }
-
 /* new */
 .modal {
 	display: flex;
-	width: 358px;
+	width: 315px;
+	margin: 1px;
 	position: fixed;
 	background-color: #fff;
 	border: 1px solid #000000;
@@ -213,13 +65,17 @@
 
 #optionsModal_1,
 #optionsModal_2 {
-	top: 200px;
+	top: 345px;
 	z-index: 1001;
+	margin-left: -20px;
 	}
 	
 #shareOptions_1,
 #shareOptions_2 {
-    top: 350px;;
+	width: 320px;
+    top: 420px;;
+    margin: 2px;
+    margin-left: -20px;
     flex-direction: column;
     z-index: 1001; /* Set a higher z-index for share and options modals */
 }
@@ -234,10 +90,6 @@
     border-radius: 5px;
     cursor: pointer;
 }
-
-        .modal-option:hover {
-            background-color: #f0f2f5;
-        }
 
 .option-detaileds {
     font-size: 13px;
@@ -302,14 +154,14 @@
     </div>
 </header>
 
-<div class="nav-icons">
+<nav>
     <img src="home.png" alt="Home" onclick="navigateToPage('home')">
     <img src="friends.png" alt="Friends" onclick="navigateToPage('friends')">
     <img src="chat.png" alt="Chat" onclick="navigateToPage('chat')">
     <img src="tv1.png" alt="TV" onclick="navigateToPage('tv')">
     <img src="notifications.png" alt="Notifications" onclick="navigateToPage('notifications')">
     <img src="group.png" alt="Groups" onclick="navigateToPage('groups')">
-</div>
+</nav>
 
     <header>
      	<h4>Video</h4>
@@ -318,18 +170,19 @@
                 <img src="search.png" alt="Search"  onclick="openSearchBox()" >
             </div>
              </header>
+             
              <div class="vidop-scroll-container">
     	<div class="vidop-container">
             <div class="vidop-box" id="story-box-A">
             <div class="vidop-info">
-                <img src="foryou.png" alt="Create" style="width: 20px; height: 20px; border-radius: 50%; margin-right: 5px;">
+                <img src="foryou.png" alt="Create" >
                 For you
             </div>
         </div>
 
         <div class="vidop-box" id="story-box-B">
          <div class="vidop-info">
-                <img src="reel.png" alt="User B" style="width: 20px; height: 20px; border-radius: 50%; margin-right: 5px;">
+                <img src="reel.png" alt="User B" >
                 Reels
             </div>
             </div>
@@ -338,13 +191,13 @@
  
         <div class="vidop-box" onclick="showStory('User C')">
             <div class="vidop-info">
-                <img src="seen.png" alt="User C" style="width: 20px; height: 20px; border-radius: 50%; margin-right: 5px;">
+                <img src="seen.png" alt="User C" >
                 Followed
             </div>
         </div>
         <div class="vidop-box" onclick="showStory('User D')">
             <div class="vidop-info">
-                <img src="save.png" alt="User D" style="width: 20px; height: 20px; border-radius: 50%; margin-right: 5px;">
+                <img src="save.png" alt="User D" >
                 Saved
             </div>
         </div>
@@ -352,82 +205,90 @@
     </div>
 </div>
 </div>
+
+    <img src="" class="avatar" style="display: none;">
+
+    <!-- Sample Post 1 -->
 <div class="post">
         <div class="user-info">
-            <a href="#"><img src="avatar.jpg" alt="User Avatar"></a>
+        	<img src="avatar.jpg" class="useravatar"  alt="Profile Icon" id="profile-icon" onclick="openProfilePage()">
             <div class="details">
-                <span onclick="window.location='#'">User Name</span>
+                <span class="username" onclick="window.location='#'"></span>
                 <div class="metadata">
-                    1 day ago
-                    <img src="public.png" alt="public" >
+                    1 d
+                   <img src="public.png" alt="public" >
                 </div>
             </div>
-    <!-- Sample Post 1 -->
     
             <div class="options" onclick="toggleOptionsMenu(1)" id="OptionsMenu_1">
-               <img src="option.png" alt="option" >
+                <img src="option.png" alt="option" >
             </div>
         </div>
-        <div class="tv-container">
-            <div class="video-player">                
-                     <div class="video-player">
-                <video width="360" height="240" controls>
-  <source src="video3.mp4" type="video/mp4"></video>
-            </div>
+        <div class="post-content">
+            <p>This is a sample post.</p>
+            <div class="tv-container">
+            <div class="video-player">
+                <video width="100%" height="auto" controls>
+  <source src="video1.mp4" type="video/mp4"></video>
             </div>
         </div>
+        </div>
+        
+       
         <div class="post-actions">
-            <div class="action-box" onclick="toggleLike(1)" id="likeButton_1">
-                <img src="like.png" alt="like"  >
+            <div class="boxes" id="box1" onmousedown="startLongPress(event)" onmouseup="endLongPress()" ontouchstart="startLongPress(event)" ontouchend="endLongPress()">
+            <div class="box" id="likeBox1" onclick="toggleLike(event)">
+            <div id="like-part1"><img src="like.png" id="likeButton1" alt="like" class="like-icon"></div>
             </div>
-            <div class="action-box" onclick="navigateToPage('comment')" id="CommentButton_1">
+            </div>
+            <div class="action-box" onclick="navigateToPage('comment')"  id="CommentButton_1">
                 <img src="comment.png" alt="comment" >
             </div>
             <div class="action-box" onclick="shareButtonClicked(1)" ondblclick="closeShareOptions(1);">
                 <img src="share.png" alt="share" >
             </div>
         </div>
-    </div>
-
-    <div id="optionsModal_1" class="modal" style="display: none;">
+        </div>
+        
+        <div id="optionsModal_1" class="modal" style="display: none;">
     	 <div class="opt">
    <div class="firsto">
     <div class="firsto-item" onclick="reportAction()" style="flex-direction: column; ">
-      <img src="/storage/emulated/0/htdocs/create.png" alt="Report"  >
+      <img src="create.png" alt="Report"  >
       <div class="option-text."><span>Show more</span></div>
     </div>
     <div class="firsto-item" onclick="reportAction()" style="flex-direction: column;">
-      <img src="/storage/emulated/0/htdocs/less.png" alt="Report"  >
+      <img src="less.png" alt="Report"  >
       <div class="option-text" ><span>Show less</span></div>
     </div></div>
     <div class="option-item" onclick="saveAction()">
-      <img src="/storage/emulated/0/htdocs/save.png" alt="Friends"  onclick="openSearchBox()" >
+      <img src="save.png" alt="Friends"  onclick="openSearchBox()" >
       <div>
       <div class="option-text"><span>Save post</span></div>
       <div class="option-detaileds"><span>Add this to your saved items.</span></div>
     </div></div>
     <div class="option-item" onclick="reportAction()">
-      <img src="/storage/emulated/0/htdocs/hide.png" alt="Report"  >
+      <img src="hide.png" alt="Report"  >
       	<div>
       <div class="option-text"><span>Hide post</span></div>
       <div class="option-detaileds"><span>See fewer post like this.</span></div>
       </div></div>
       <div class="option-item" onclick="reportAction()">
-      <img src="/storage/emulated/0/htdocs/report.png" alt="Report"  >
+      <img src="report.png" alt="Report"  >
       	<div>
       <div class="option-text"><span>Report post</span></div>
       <div class="option-detaileds"><span>We wont let user know who reported this.</span></div>
       </div></div>
       <div class="option-item" onclick="reportAction()">
-      <img src="/storage/emulated/0/htdocs/link.png" alt="Report"  >
+      <img src="link.png" alt="Report"  >
       	<div>
       <div class="option-text"><span>Copy Link</span></div>
       </div></div>
       <div class="option-item" onclick="followAction()">
-      <img src="/storage/emulated/0/htdocs/follow.png" alt="Friends"  onclick="openSearchBox()" >
+      <img src="follow.png" alt="Friends"  onclick="openSearchBox()" >
       	<div>
       <div class="option-text"><span>Follow user</span></div>
-      <div class="/storage/emulated/0/htdocs/option-detaileds"><span>Stop seeing post but stay friends.</span></div>
+      <div class="option-detaileds"><span>Stop seeing post but stay friends.</span></div>
     </div></div>
         <button class="modal-button" onclick="closeOptionsMenu(1)">Cancel</button>
         <!-- ... Your existing modal content ... -->
@@ -438,68 +299,86 @@
     	<div id="text"><span>Share on </span></div>
     	<div class="first">
         <div class="share-item" onclick="shareOnFacebook()">
-      <img src="/storage/emulated/0/htdocs/edited.png" alt="facebook"  onclick="openFacebookBox()" >
+      <img src="edited.png" alt="facebook"  onclick="openFacebookBox()" >
       <span class="share-text">Post</span>
     </div>
     <div class="share-item" onclick="shareOnFacebook()">
-      <img src="/storage/emulated/0/htdocs/story.png" alt="facebook"  onclick="openFacebookBox()" >
+      <img src="story.png" alt="facebook"  onclick="openFacebookBox()" >
       <span class="share-text">Story</span>
     </div>
     <div class="share-item" onclick="shareOnGroup()">
-      <img src="/storage/emulated/0/htdocs/group.png" alt="Group"  onclick="openSearchBox()" >
+      <img src="group.png" alt="Group"  onclick="openSearchBox()" >
       <span class="share-text">Group</span>
     </div>
     <div class="share-item" onclick="shareOnFacebook()">
-      <img src="/storage/emulated/0/htdocs/sharef.png" alt="facebook"  onclick="openFacebookBox()" >
+      <img src="sharef.png" alt="facebook"  onclick="openFacebookBox()" >
       <span class="share-text">Friend's <br>Profilr</span>
     </div></div>
-    <div class="second">
+    <div class="first">
     	<div class="share-item" onclick="shareOnMessenger()">
-      <img src="/storage/emulated/0/htdocs/chat.png" alt="Chat"  onclick="openSearchBox()" >
+      <img src="chat.png" alt="Chat"  onclick="openSearchBox()" >
       <span class="share-text" >Chat</span>
     </div>
     <div class="share-item" onclick="shareWithFriends()">
-        <img src="/storage/emulated/0/htdocs/whatsapp.png" alt="Friends"  onclick="openSearchBox()" >
+        <img src="whatsapp.png" alt="Friends"  onclick="openSearchBox()" >
       <span class="share-text">Whatsapp</span>
     </div>
     <div class="share-item" onclick="shareOnPage()">
-      <img src="/storage/emulated/0/htdocs/page.png" alt="Page"  onclick="openSearchBox()" >
+      <img src="page.png" alt="Page"  onclick="openSearchBox()" >
       <span class="share-text">Page</span>
     </div>
     <div class="share-item" onclick="showMoreOptions()">
-      <img src="/storage/emulated/0/htdocs/option.png" alt="option" onclick="closeShareOptions(1)">
+      <img src="option.png" alt="option" onclick="closeShareOptions(1)">
       <span class="share-text">More</span>
     </div>
 </div></div>
  
+
+   <div id="reactionsContainer" class="reactions">
+      <img src="namaste.png" alt="namaste" class="reaction" onclick="setReaction('namaste.png')">
+    <img src="like.png" alt="like" class="reaction" onclick="setReaction('like.png')">
+    <img src="dislike.png" alt="dislike" class="reaction" onclick="setReaction('dislike.png')">
+    <img src="lol.png" alt="happy" class="reaction" onclick="setReaction('lol.png')">
+    <img src="love.png" alt="love" class="reaction" onclick="setReaction('love.png')">
+    <img src="wow.png"  alt="wow" class="reaction" onclick="setReaction('wow.png')">
+    <img src="angry.png" alt="angry" class="reaction" onclick="setReaction('angry.png')">
+    <img src="sad.png" alt="sad" class="reaction" onclick="setReaction('sad.png')">
+  </div>
+  
 <!-- Sample Post 2 -->
 <div class="post">
         <div class="user-info">
-            <a href="#"><img src="/storage/emulated/0/htdocs/avatar.jpg" alt="User Avatar"></a>
+        	<img src="avatar.jpg" class="useravatar"  alt="Profile Icon" id="profile-icon" onclick="openProfilePage()">
             <div class="details">
-                <span onclick="window.location='#'">User Name</span>
+                <span class="user" onclick="window.location='#'">User Name</span>
                 <div class="metadata">
-                    1 day ago
-               <img src="/storage/emulated/0/htdocs/public.png" alt="public" >
+                    1 d
+                   <img src="public.png" alt="public" >
                 </div>
             </div>
-    <!-- Repeat the structure for additional posts with unique postIds (e.g., 2, 3, ...) -->
-    
     
             <div class="options" onclick="toggleOptionsMenu(2)" id="OptionsMenu_2">
-                <img src="/storage/emulated/0/htdocs/option.png" alt="option" >
+                <img src="option.png" alt="option" >
             </div>
         </div>
-        <div class="tv-container">
+        
+        <div class="post-content">
+            <p>This is a sample post.</p>
+           <div class="tv-container">
             <div class="video-player">
-                <video width="360" height="240" controls>
-  <source src="/storage/emulated/0/htdocs/video2.mp4" type="video/mp4"></video>
+                <video width="100%" height="auto" controls>
+                <source src="video2.mp4" type="video/mp4"></video>
             </div>
         </div>
+        </div>
+        
+        
         <div class="post-actions">
-            <div class="action-box" onclick="toggleLike(2)" id="likeButton_2">
-                <img src="like.png" alt="like"  >
-            </div>
+            <div class="boxes" id="box2" onmousedown="startLongPress(event)" onmouseup="endLongPress()" ontouchstart="startLongPress(event)" ontouchend="endLongPress()">
+    <div class="box" id="likeBox2" onclick="toggleLike(event)">
+      <div id="like-part2"><img src="like.png" id="likeButton2" alt="like" class="like-icon"></div>
+    </div>
+  </div>
             <div class="action-box" onclick="navigateToPage('comment')"  id="CommentButton_2">
                 <img src="comment.png" alt="comment" >
             </div>
@@ -508,47 +387,47 @@
             </div>
         </div>
     </div>
-
+    
     <!-- Options Modal for Post 2 -->
     <div id="optionsModal_2" class="modal" style="display: none;">
         	 <div class="opt">
    <div class="firsto">
     <div class="firsto-item" onclick="reportAction()" style="flex-direction: column; ">
-      <img src="/storage/emulated/0/htdocs/create.png" alt="Report"  >
+      <img src="create.png" alt="Report"  >
       <div class="option-text."><span>Show more</span></div>
     </div>
     <div class="firsto-item" onclick="reportAction()" style="flex-direction: column;">
-      <img src="/storage/emulated/0/htdocs/less.png" alt="Report"  >
+      <img src="less.png" alt="Report"  >
       <div class="option-text" ><span>Show less</span></div>
     </div></div>
     <div class="option-item" onclick="saveAction()">
-      <img src="/storage/emulated/0/htdocs/save.png" alt="Friends"  onclick="openSearchBox()" >
+      <img src="save.png" alt="Friends"  onclick="openSearchBox()" >
       <div>
       <div class="option-text"><span>Save post</span></div>
       <div class="option-detaileds"><span>Add this to your saved items.</span></div>
     </div></div>
     <div class="option-item" onclick="reportAction()">
-      <img src="/storage/emulated/0/htdocs/hide.png" alt="Report"  >
+      <img src="hide.png" alt="Report"  >
       	<div>
       <div class="option-text"><span>Hide post</span></div>
       <div class="option-detaileds"><span>See fewer post like this.</span></div>
       </div></div>
       <div class="option-item" onclick="reportAction()">
-      <img src="/storage/emulated/0/htdocs/report.png" alt="Report"  >
+      <img src="report.png" alt="Report"  >
       	<div>
       <div class="option-text"><span>Report post</span></div>
       <div class="option-detaileds"><span>We wont let user know who reported this.</span></div>
       </div></div>
       <div class="option-item" onclick="reportAction()">
-      <img src="/storage/emulated/0/htdocs/link.png" alt="Report"  >
+      <img src="link.png" alt="Report"  >
       	<div>
       <div class="option-text"><span>Copy Link</span></div>
       </div></div>
       <div class="option-item" onclick="followAction()">
-      <img src="/storage/emulated/0/htdocs/follow.png" alt="Friends"  onclick="openSearchBox()" >
+      <img src="follow.png" alt="Friends"  onclick="openSearchBox()" >
       	<div>
       <div class="option-text"><span>Follow user</span></div>
-      <div class="/storage/emulated/0/htdocs/option-detaileds"><span>Stop seeing post but stay friends.</span></div>
+      <div class="option-detaileds"><span>Stop seeing post but stay friends.</span></div>
     </div></div>
         <button class="modal-button" onclick="closeOptionsMenu(2)">Cancel</button>
         <!-- ... Your existing modal content ... -->
@@ -558,161 +437,41 @@
     	<div id="text"><span>Share on </span></div>
     	<div class="first">
         <div class="share-item" onclick="shareOnFacebook()">
-      <img src="/storage/emulated/0/htdocs/edited.png" alt="facebook"  onclick="openFacebookBox()" >
+      <img src="edited.png" alt="facebook"  onclick="openFacebookBox()" >
       <span class="share-text">Post</span>
     </div>
     <div class="share-item" onclick="shareOnFacebook()">
-      <img src="/storage/emulated/0/htdocs/story.png" alt="facebook"  onclick="openFacebookBox()" >
+      <img src="story.png" alt="facebook"  onclick="openFacebookBox()" >
       <span class="share-text">Story</span>
     </div>
     <div class="share-item" onclick="shareOnGroup()">
-      <img src="/storage/emulated/0/htdocs/group.png" alt="Group"  onclick="openSearchBox()" >
+      <img src="group.png" alt="Group"  onclick="openSearchBox()" >
       <span class="share-text">Group</span>
     </div>
     <div class="share-item" onclick="shareOnFacebook()">
-      <img src="/storage/emulated/0/htdocs/sharef.png" alt="facebook"  onclick="openFacebookBox()" >
+      <img src="sharef.png" alt="facebook"  onclick="openFacebookBox()" >
       <span class="share-text">Friend's <br>Profilr</span>
     </div></div>
-    <div class="second">
+    <div class="first">
     	<div class="share-item" onclick="shareOnMessenger()">
-      <img src="/storage/emulated/0/htdocs/chat.png" alt="Chat"  onclick="openSearchBox()" >
+      <img src="chat.png" alt="Chat"  onclick="openSearchBox()" >
       <span class="share-text" >Chat</span>
     </div>
     <div class="share-item" onclick="shareWithFriends()">
-        <img src="/storage/emulated/0/htdocs/whatsapp.png" alt="Friends"  onclick="openSearchBox()" >
+        <img src="whatsapp.png" alt="Friends"  onclick="openSearchBox()" >
       <span class="share-text">Whatsapp</span>
-    </div>
+    </div>j
     <div class="share-item" onclick="shareOnPage()">
-      <img src="/storage/emulated/0/htdocs/page.png" alt="Page"  onclick="openSearchBox()" >
+      <img src="page.png" alt="Page"  onclick="openSearchBox()" >
       <span class="share-text">Page</span>
     </div>
     <div class="share-item" onclick="showMoreOptions()">
-      <img src="/storage/emulated/0/htdocs/option.png" alt="option" onclick="closeShareOptions(2)">
+      <img src="option.png" alt="option" onclick="closeShareOptions(2)">
       <span class="share-text">More</span>
     </div>
 </div></div>
 
-<!-- Your posts and other content... -->
-<script>
-	
-function navigateToPage(page) {
-        const pages = ['home', 'friends', 'notifications', 'groups', 'chat', 'tv', 'search', 'menu', "comment"];
-        if (pages.includes(page)) {
-            window.location.href = `${page}.html`;
-        } else {
-            console.log(`Navigate to ${page} page`);
-        }
-    }
 
-        function toggleLike(postId) {
-            var likeButton = document.getElementById('likeButton_' + postId);
-            likeButton.classList.toggle('active');
-        }
-
-function toggleCommentModal(postId) {
-    var modal = document.getElementById('commentModal_' + postId);
-    modal.style.display = (modal.style.display === 'block') ? 'none' : 'block';
-
-  // Toggle body scrolling
-    toggleBodyScrolling();
-}
-
-function toggleOptionsMenu(postId) {
-    var modal = document.getElementById('optionsModal_' + postId);
-    modal.style.display = (modal.style.display === 'block') ? 'none' : 'block';
-
-    // Toggle body scrolling
-    toggleBodyScrolling();
-}
-
-function shareButtonClicked(postId) {
-    var shareOptions = document.getElementById('shareOptions_' + postId);
-    shareOptions.style.display = (shareOptions.style.display === 'block') ? 'none' : 'block';
-
-    // Toggle body scrolling
-    toggleBodyScrolling();
-}
-
-function toggleBodyScrolling() {
-    var body = document.body;
-    body.style.overflow = (body.style.overflow === 'hidden') ? 'auto' : 'hidden';
-}
-
-        function closeShareOptions(postId) {
-    var shareOptions = document.getElementById('shareOptions_' + postId);
-    shareOptions.style.display = 'none';
-    document.body.style.overflow = 'auto';
-    document.body.style.position = 'static';
-}
-
-        function closeCommentModal(postId) {
-    var modal = document.getElementById('commentModal_' + postId);
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-    document.body.style.position = 'static';
-}
-
-        function closeOptionsMenu(postId) {
-    var modal = document.getElementById('optionsModal_' + postId);
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-    document.body.style.position = 'static';
-}
-
-function shareOnFacebook() {
-    // Add actual sharing functionality for Facebook here
-    alert('Sharing on Facebook!');
-    closeShareModal();
-  }
-
-  function shareWithFriends() {
-    // Add actual sharing functionality for Friends here
-    alert('Sharing with Friends!');
-    closeShareModal();
-  }
-
-  function shareOnMessenger() {
-    // Add actual sharing functionality for Messenger here
-    alert('Sharing on Messenger!');
-    closeShareModal();
-  }
-
-  function shareOnGroup() {
-    // Add actual sharing functionality for Group here
-    alert('Sharing on Group!');
-    closeShareModal();
-  }
-
-  function shareOnPage() {
-    // Add actual sharing functionality for Page here
-    alert('Sharing on Page!');
-    closeShareModal();
-  }
-
-  function showMoreOptions() {
-    // Add more sharing options or navigate to another page with additional options
-    alert('More options!');
-    closeShareModal();
-  }
-  
-  function followAction() {
-    alert("Follow clicked");
-    // Add your follow functionality here
-    toggleOptions();
-  }
-
-  function saveAction() {
-    alert("Save clicked");
-    // Add your save functionality here
-    toggleOptions();
-  }
-
-  function reportAction() {
-    alert("Report clicked");
-    // Add your report functionality here
-    toggleOptions();
-  }
-    </script>
-
+<script src="script.js"></script>
 </body>
-</html>
+	</html>
