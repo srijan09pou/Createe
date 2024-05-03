@@ -145,12 +145,21 @@
             border: 1px solid #000000;
             margin: 2px;
         }
+        
+        .profile {
+        	display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20%;
+            height: auto;
+            margin: 1px;
+        }
 
         .profile img {
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            margin: 0 5px;
+            margin: 1px;
             border: 1px solid #000000;
         }
 
@@ -158,31 +167,36 @@
             flex: 1;
             width: 70%;
             margin: 2px;
-            border: 1px solid #000000;
         }
 
         .contact-name {
             margin: 0;
-            font-size: 18px;
+            font-size: 20px;
             margin: 2px;
-            border: 1px solid #000000;
         }
 
         .last-message {
             margin: 0;
-            font-size: 15px;
+            font-size: 16px;
             margin: 2px;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
             color: #888;
-            border: 1px solid #000000;
+        }
+        
+        .message-status {
+        	display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 10%;
+            height: auto;
+            margin: 2px;
         }
 
         .message-status img {
             width: 15px;
             height: 15px;
-            margin: 2px;
             border-radius: 50%;
             border: 1px solid #000000;
         }
@@ -275,8 +289,7 @@
             <p class="last-message">Last message sent or received</p>
         </div>
         <div class="message-status">
-            <!-- Use appropriate symbols or images for read/unread status or delivery confirmation -->
-            <img src="read_icon.png" alt="Read Icon">
+            <img src="seen.png" alt="Read Icon">
         </div>
     </div>
     <div class="chat-entry" onclick="navigateChatRoom()">
@@ -289,7 +302,7 @@
         </div>
         <div class="message-status">
             <!-- Use appropriate symbols or images for read/unread status or delivery confirmation -->
-            <img src="read_icon.png" alt="Read Icon">
+            <img src="seen.png" alt="Read Icon">
         </div>
     </div>
     <div class="chat-entry" onclick="navigateChatRoom()">
@@ -302,7 +315,7 @@
         </div>
         <div class="message-status">
             <!-- Use appropriate symbols or images for read/unread status or delivery confirmation -->
-            <img src="read_icon.png" alt="Read Icon">
+            <img src="seen.png" alt="Read Icon">
         </div>
     </div>
     <div class="chat-entry" onclick="navigateChatRoom()">
@@ -315,7 +328,7 @@
         </div>
         <div class="message-status">
             <!-- Use appropriate symbols or images for read/unread status or delivery confirmation -->
-            <img src="read_icon.png" alt="Read Icon">
+            <img src="seen.png" alt="Read Icon">
         </div>
     </div>
     <div class="chat-entry" onclick="navigateChatRoom()" >
@@ -328,7 +341,7 @@
         </div>
         <div class="message-status">
             <!-- Use appropriate symbols or images for read/unread status or delivery confirmation -->
-            <img src="read_icon.png" alt="Read Icon">
+            <img src="seen.png" alt="Read Icon">
         </div>
     </div>
     <div class="chat-entry" onclick="navigateChatRoom()">
@@ -341,7 +354,7 @@
         </div>
         <div class="message-status">
             <!-- Use appropriate symbols or images for read/unread status or delivery confirmation -->
-            <img src="read_icon.png" alt="Read Icon">
+            <img src="seen.png" alt="Read Icon">
         </div>
     </div>
     
