@@ -17,7 +17,58 @@
             align-items: center;
             background-color: #57CE00;
         }
+        
+        /* First Part */
 
+        /* Header styles */
+        header {
+            background-color: #fff;
+            color: #fff;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h4 {
+            font-size: 20px;
+            margin: 0;
+            padding: 10px;
+            font-weight: bold;
+            color: #FF8A00;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand img {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+
+        /* Navigation icons styles */
+        .nav-icons {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            background-color: #fff;
+            color: #fff;
+            padding: 10px 0;
+            margin-bottom: 3px;
+        }
+
+        .nav-icons img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        
+        /* First Part End */
+        
         .second {
             background-color: #fff;
             color: #FF8200;
@@ -224,6 +275,23 @@
     </style>
 </head>
 <body>
+    <header>
+    <h4>facebook</h4>
+    <div class="brand">
+        <img src="search.png" alt="Search" onclick="navigateToPage('search')">
+        <img src="menu.png" alt="Menu" onclick="navigateToPage('menu')">
+    </div>
+</header>
+
+<div class="nav-icons">
+    <img src="home.png" alt="Home" onclick="navigateToPage('home')">
+    <img src="friends.png" alt="Friends" onclick="navigateToPage('friends')">
+    <img src="chat.png" alt="Chat" onclick="navigateToPage('chat')">
+    <img src="tv.png" alt="TV" onclick="navigateToPage('tv')">
+    <img src="notifications1.png" alt="Notifications" onclick="navigateToPage('notifications')">
+    <img src="group.png" alt="Groups" onclick="navigateToPage('groups')">
+</div>
+
     <div class="second">
         <div class="menum" onclick="openmenum()">
             <img src="menu.png" alt="Menu">
