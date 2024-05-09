@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EBook</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
     *{
@@ -28,14 +27,8 @@ nav{
     z-index: 1000;
 }
 
-nav .left .logo {
+nav .left .logo img{
     width: 100px;
-    margin: 5px 0;
-    cursor: pointer;
-}
-
-.logo img{
-    width: 90%;
     margin: 5px 0;
     cursor: pointer;
 }
@@ -45,22 +38,22 @@ nav .left{
     align-items: center;
     justify-content: center;
     margin-left: 10px;
-    border: 1px solid #000000;
 }
 
 nav .left .search_bar{
-    width: 80px;
+    width: 250px;
     height: 40px;
     background: #efefef;
     border-radius: 30px;
-    padding: 0 5px;
-    margin-left: 8px;
+    padding: 0 10px;
+    margin-left: 10px;
     position: relative;
+    left: 15px;
 }
 
 nav .left .search_bar i{
     line-height: 40px;
-    font-size: 15px;
+    font-size: 19px;
     color: #919191;
     margin-right: 5px;
 }
@@ -70,24 +63,17 @@ nav .left .search_bar input{
     outline: none;
     border: 0;
     font-size: 16px;
-    width: 90px;
+    width: 200px;
 }
 
 nav .center{
-	display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
     position: relative;
-    border: 1px solid #000000;
+    right: 45px;
 }
 
 nav .center i{
-	width: 35px;
-    height: 40px;
-    margin: 0 5px;
+    margin: 0 45px 0 45px;
     font-size: 22px;
-    padding: 9px 4px;
 }
 
 nav .center i:hover{
@@ -99,13 +85,11 @@ nav .right{
     display: flex;
     align-items: center;
     margin-right: 10px;
-    margin-left: 10px;
-    border: 1px solid #000000;
 }
 
 nav .right i{
     width: 35px;
-    height: 40px;
+    height: 35px;
     border-radius: 50%;
     background: #efefef;
     line-height: 35px;
@@ -144,10 +128,8 @@ nav .right img{
     overflow: hidden;
     overflow-y: scroll;
     background: #f5f5f5;
-    margin-right: 5px;
     padding: 20px 6px 5px 10px;
     position: fixed;
-    border: 1px solid #000000;
 }
 
 .main .left::-webkit-scrollbar{
@@ -231,50 +213,44 @@ nav .right img{
     margin: 8px 15px 8px 0;
 }
 
- .home-center{
-    width: 100%;
+
+.main .center{
+    width: 50%;
     height: auto;
-    padding: 20px 5px 0 5px;
+    padding: 20px 20px 0 20px;
     background: #f5f5f5;
-    margin-left: 100%;
-    border: 1px solid #000000;
+    margin-left: 25%;
 }
 
-.main .home-center::-webkit-scrollbar{
+.main .center::-webkit-scrollbar{
     width: 0;
 }
 
-.main .home-center .top_box{
+.main .center .top_box{
     width: 100%;
     height: 260px;
     display: grid;
-    overflow-x: auto;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
-        
-        .story-container {
-    display: flex;
-}
 
-
-.main .home-center .top_box .my_story_card{
+.main .center .top_box .my_story_card{
     width: 135px;
     height: 250px;
     overflow: hidden;
-    margin: 0 4px;
+    margin: 0 auto;
     box-shadow: 0 1px 8px rgba(0,0,0,0.2);
     border-radius: 10px;
     cursor: pointer;
 }
 
-.main .home-center .top_box .my_story_card img{
+.main .center .top_box .my_story_card img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-.main .home-center .top_box .my_story_card .story_upload{
+.main .center .top_box .my_story_card .story_upload{
     width: 100%;
     height: 60px;
     background: #fff;
@@ -283,7 +259,7 @@ nav .right img{
     cursor: pointer;
 }
 
-.main .home-center .top_box .my_story_card .story_upload img{
+.main .center .top_box .my_story_card .story_upload img{
     width: 30px;
     height: 30px;
     display: flex;
@@ -293,7 +269,7 @@ nav .right img{
     border-radius: 50%;
 }
 
-.main .home-center .top_box .my_story_card .story_upload .story_tag{
+.main .center .top_box .my_story_card .story_upload .story_tag{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -303,37 +279,37 @@ nav .right img{
     font-size: 14px;
 }
 
-.main .home-center .top_box .story_card{
+.main .center .top_box .story_card{
     width: 135px;
     height: 250px;
     overflow: hidden;
-    margin: 0 4px;
+    margin: 0 auto;
     box-shadow: 0 1px 8px rgba(0,0,0,0.2);
     border-radius: 10px;
     cursor: pointer;
 }
 
-.main .home-center .top_box .story_card img{
+.main .center .top_box .story_card img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-.main .home-center .top_box .story_card .story_profile{
+.main .center .top_box .story_card .story_profile{
     position: relative;
     bottom: 240px;
     margin-left: 10px;
 }
 
-.main .home-center .top_box .story_card .story_profile img{
+.main .center .top_box .story_card .story_profile img{
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: 4px solid #45abff;
 }
 
-.main .home-center .top_box .story_card .story_profile .cricle{
+.main .center .top_box .story_card .story_profile .cricle{
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -344,19 +320,19 @@ nav .right img{
     left: 25px;
 }
 
-.main .home-center .top_box .story_card .story_name{
+.main .center .top_box .story_card .story_name{
     position: relative;
     bottom: 100px;
     padding: 0 10px;
 }
 
-.main .home-center .top_box .story_card .story_name .name{
+.main .center .top_box .story_card .story_name .name{
     font-weight: bold;
     color: #fff;
     font-size: 14px;
 }
 
-.main .home-center .my_post{
+.main .center .my_post{
     width: 100%;
     height: auto;
     background: #fff;
@@ -366,7 +342,7 @@ nav .right img{
     margin: 10px 0;
 }
 
-.main .home-center .my_post img{
+.main .center .my_post img{
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -374,12 +350,12 @@ nav .right img{
     object-position: center;
 }
 
-.main .home-center .my_post .post_top{
+.main .center .my_post .post_top{
     display: flex;
     align-items: center;
 }
 
-.main .home-center .my_post .post_top input{
+.main .center .my_post .post_top input{
     width: 90%;
     padding: 10px;
     margin-left: 20px;
@@ -390,12 +366,12 @@ nav .right img{
     font-size: 17px;
 }
 
-.main .home-center .my_post .post_top input:hover{
+.main .center .my_post .post_top input:hover{
     background: #e3e3e3;
     cursor: pointer;
 }
 
-.main .home-center .my_post hr{
+.main .center .my_post hr{
     width: 100%;
     height: 1px;
     background: #cccccc;
@@ -403,49 +379,45 @@ nav .right img{
     margin: 10px 0;
 }
 
-.main .home-center .my_post .post_bottom{
+.main .center .my_post .post_bottom{
     width: 95%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 5px auto;
 }
 
-.post_bottom .post_icon{
+.main .center .my_post .post_bottom .post_icon{
     display: flex;
     align-items: center;
     margin: 0 auto;
-    padding: 7px;
+    padding: 7px 40px;
     cursor: pointer;
 }
 
-.main .home-center .my_post .post_bottom .post_icon:hover{
+.main .center .my_post .post_bottom .post_icon:hover{
     background: #efefef;
     border-radius: 8px;
 }
 
-.main .home-center .my_post .post_bottom .post_icon i.red{
-    font-size: 15px;
+.main .center .my_post .post_bottom .post_icon i.red{
+    font-size: 23px;
     color: red;
-    margin-right: 6px;
+    margin-right: 8px;
 }
 
-.main .home-center .my_post .post_bottom .post_icon i.green{
-    font-size: 15px;
+.main .center .my_post .post_bottom .post_icon i.green{
+    font-size: 23px;
     color: #27cc37;
-    margin-right: 6px;
+    margin-right: 8px;
 }
 
-.main .home-center .my_post .post_bottom .post_icon i.yellow{
-    font-size: 15px;
+.main .center .my_post .post_bottom .post_icon i.yellow{
+    font-size: 23px;
     color: #f7b928;
-    margin-right: 6px;
+    margin-right: 8px;
 }
 
-.post_bottom p {
-	font-size: 15px;
-}
-
-.main .home-center .room{
+.main .center .room{
     width: 100%;
     height: auto;
     background: #fff;
@@ -456,42 +428,41 @@ nav .right img{
     align-items: center;
 }
 
-.main .home-center .room .room_image{
+.main .center .room .room_image{
     display: flex;
     align-items: center;
     border: 1px solid #45abff;
-    padding: 5px;
+    padding: 10px;
     border-radius: 30px;
-    width: 100px;
-    border: 1px solid #000000;
+    width: 150px;
     margin-right: 5px;
 }
 
-.main .home-center .room .room_image:hover{
+.main .center .room .room_image:hover{
     background: #efefef;
     cursor: pointer;
 }
 
-.main .home-center .room .room_image img{
+.main .center .room .room_image img{
     width: 25px;
     margin-right: 8px;
 }
 
-.main .home-center .room .room_image .room_tag{
+.main .center .room .room_image .room_tag{
     color: #45abff;
 }
 
-.main .home-center .room .room_profile img{
+.main .center .room .room_profile img{
     width: 45px;
     height: 45px;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
-    margin: 0 4px;
+    margin: 0 8px;
     border: 3px solid #45abff;
 }
 
-.main .home-center .friends_post{
+.main .center .friends_post{
     margin: 10px 0;
     width: 100%;
     height: auto;
@@ -501,19 +472,19 @@ nav .right img{
     box-shadow: 0 1px 8px rgba(0,0,0,0.2);
 }
 
-.main .home-center .friends_post .friend_post_top{
+.main .center .friends_post .friend_post_top{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 15px;
 }
 
-.main .home-center .friends_post .friend_post_top .img_and_name{
+.main .center .friends_post .friend_post_top .img_and_name{
     display: flex;
     align-items: center;
 }
 
-.main .home-center .friends_post .friend_post_top .img_and_name img{
+.main .center .friends_post .friend_post_top .img_and_name img{
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -523,44 +494,44 @@ nav .right img{
     cursor: pointer;
 }
 
-.main .home-center .friends_post .friend_post_top .img_and_name .friends_name .friends_name{
+.main .center .friends_post .friend_post_top .img_and_name .friends_name .friends_name{
     font-weight: bold;
     cursor: pointer;
 }
 
-.main .home-center .friends_post .friend_post_top .img_and_name .friends_name .friends_name:hover{
+.main .center .friends_post .friend_post_top .img_and_name .friends_name .friends_name:hover{
     text-decoration: underline;
 }
 
-.main .home-center .friends_post .friend_post_top .img_and_name .friends_name .time{
+.main .center .friends_post .friend_post_top .img_and_name .friends_name .time{
     font-size: 14px;
     color: #919191;
     margin: 3px 0;
 }
 
-.main .home-center .friends_post .friend_post_top .img_and_name .friends_name .time i{
+.main .center .friends_post .friend_post_top .img_and_name .friends_name .time i{
     font-size: 10px;
     margin-left: 5px;
 }
 
-.main .home-center .friends_post .friend_post_top .menu{
+.main .center .friends_post .friend_post_top .menu{
     width: 35px;
     height: 35px;
     border-radius: 50%;
 }
 
-.main .home-center .friends_post .friend_post_top .menu:hover{
+.main .center .friends_post .friend_post_top .menu:hover{
     background: #efefef;
     cursor: pointer;
 }
 
-.main .home-center .friends_post .friend_post_top .menu i{
+.main .center .friends_post .friend_post_top .menu i{
     line-height: 35px;
     margin-left: 8px;
     font-size: 18px;
 }
 
-.main .home-center .friends_post img{
+.main .center .friends_post img{
     width: 100%;
     height: 450px;
     object-fit: cover;
@@ -568,40 +539,40 @@ nav .right img{
     border-radius: 5px;
 }
 
-.main .home-center .friends_post .info{
+.main .center .friends_post .info{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 10px 0;
 }
 
-.main .home-center .friends_post .info .emoji_img{
+.main .center .friends_post .info .emoji_img{
     display: flex;
 }
 
-.main .home-center .friends_post .info .emoji_img img{
+.main .center .friends_post .info .emoji_img img{
     width: 20px;
     height: 20px;
 }
 
-.main .home-center .friends_post .info .emoji_img p{
+.main .center .friends_post .info .emoji_img p{
     margin-left: 10px;
-    font-size: 12px;
+    font-size: 16px;
     color: #919191;
 }
 
-.main .home-center .friends_post .info .comment{
+.main .center .friends_post .info .comment{
     display: flex;
     align-items: center;
 }
 
-.main .home-center .friends_post .info .comment p{
-    padding: 0 6px;
-    font-size: 12px;
+.main .center .friends_post .info .comment p{
+    padding: 0 12px;
+    font-size: 15px;
     color: #919191;
 }
 
-.main .home-center .friends_post hr{
+.main .center .friends_post hr{
     width: 100%;
     height: 1px;
     background: #cccccc;
@@ -609,7 +580,7 @@ nav .right img{
     margin: 10px 0;
 }
 
-.main .home-center .friends_post .like{
+.main .center .friends_post .like{
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -617,27 +588,27 @@ nav .right img{
     justify-content: space-between;
 }
 
-.main .home-center .friends_post .like .like_icon{
+.main .center .friends_post .like .like_icon{
     display: flex;
     align-items: center;
 }
 
-.main .home-center .friends_post .like .like_icon i{
+.main .center .friends_post .like .like_icon i{
     font-size: 20px;
     margin-right: 8px;
     color: #919191;
 }
 
-.main .home-center .friends_post .like .like_icon i.activi{
+.main .center .friends_post .like .like_icon i.activi{
     color: #45abff;
 }
 
-.main .home-center .friends_post .comment_warpper{
+.main .center .friends_post .comment_warpper{
     display: flex;
     align-items: center;
 }
 
-.main .home-center .friends_post .comment_warpper img{
+.main .center .friends_post .comment_warpper img{
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -646,7 +617,7 @@ nav .right img{
     margin-right: 15px;
 }
 
-.main .home-center .friends_post .comment_warpper .circle{
+.main .center .friends_post .comment_warpper .circle{
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -657,14 +628,14 @@ nav .right img{
     right: 25px;
 }
 
-.main .home-center .friends_post .comment_warpper .comment_search{
+.main .center .friends_post .comment_warpper .comment_search{
     width: 95%;
     padding: 5px 15px;
     background: #efefef;
     border-radius: 30px;
 }
 
-.main .home-center .friends_post .comment_warpper .comment_search input{
+.main .center .friends_post .comment_warpper .comment_search input{
     width: 85%;
     height: 30px;
     background: none;
@@ -672,19 +643,19 @@ nav .right img{
     outline: none;
 }
 
-.main .home-center .friends_post .comment_warpper .comment_search i{
+.main .center .friends_post .comment_warpper .comment_search i{
     padding: 0 5px;
     color: #919191;
 }
 
-.main .home-center .loard{
+.main .center .loard{
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 20px 0 50px 0;
 }
 
-.main .home-center .loard button{
+.main .center .loard button{
     background: none;
     padding: 5px 20px;
     border: 1px solid #919191;
@@ -693,19 +664,19 @@ nav .right img{
     cursor: pointer;
 }
 
-.main .home-center .end{
+.main .center .end{
     font-size: 15px;
     text-align: center;
     color: #919191;
     margin: 10px 0;
 }
 
-.main .home-center .end span{
+.main .center .end span{
     margin-left: 8px;
     color: #45abff;
 }
 
-.main .home-center .end span i{
+.main .center .end span i{
     margin-right: 8px;
 }
 
@@ -717,14 +688,12 @@ nav .right img{
 .main .right{
     width: 25%;
     height: 92vh;
-    display: none;
     overflow: hidden;
     overflow-y: scroll;
     background: #f5f5f5;
     padding: 20px 10px 5px 6px;
     position: fixed;
     right: 0;
-    border: 1px solid #000000;
 }
 
 .main .right::-webkit-scrollbar{
@@ -873,26 +842,39 @@ nav .right img{
 <body>
 
     <nav>
+
         <div class="left">
+
             <div class="logo">
                 <img src="image/logo.png">
             </div>
+
+            <div class="search_bar">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search EBook">
+
+            </div>
+
         </div>
 
         <div class="center">
+
             <i class="fa-solid fa-house"></i>
-            <i class="fa-brands fa-facebook-messenger"></i>            
             <i class="fa-solid fa-tv"></i>
-            <i class="fa-solid fa-bell"></i>            
+            <i class="fa-solid fa-store"></i>
             <i class="fa-solid fa-users"></i>
+
         </div>
 
         <div class="right">
+
             <i class="fa-solid fa-list-ul"></i>
-            <i class="fa-solid fa-store"></i>            
-            <i class="fa-solid fa-magnifying-glass"></i>                
+            <i class="fa-brands fa-facebook-messenger"></i>
+            <i class="fa-solid fa-bell"></i>
             <i class="fa-solid fa-moon"></i>
             <img src="image/profile.png">
+
         </div>
 
     </nav>
@@ -907,7 +889,7 @@ nav .right img{
         <!------------------left------------------->
 
         <div class="left">
-        	
+
             <div class="img">
                 <img src="image/profile.png">
                 <p>John Deo</p>
@@ -982,66 +964,92 @@ nav .right img{
 
         <!------------center---------------------->
 
-        <div class="home-center">
+        <div class="center">
 
             <div class="top_box">
-     <div class="story-scroll-container">
-    	<div class="story-container">
+
                 <div class="my_story_card">
+
                     <img src="image/story_1.png">
+
                     <div class="story_upload">
                         <img src="image/upload.png">
                         <p class="story_tag">Create story</p>
                     </div>
+
                 </div>
 
                 <div class="story_card">
+
                     <img src="image/story_2.jpg">
+
                     <div class="story_profile">
+
                         <img src="image/profile_1.jpg">
-                        <div class="cricle"></div>            
+                        <div class="cricle"></div>
+                        
                     </div>
+
                     <div class="story_name">
-                        <p class="name"></p>
+                        <p class="name">Charith Disanayaka</p>
                     </div>
+
                 </div>
 
                 <div class="story_card">
+
                     <img src="image/story_3.jpg">
+
                     <div class="story_profile">
+
                         <img src="image/profile_2.jpg">
-                        <div class="cricle"></div>                        
+                        <div class="cricle"></div>
+                        
                     </div>
+
                     <div class="story_name">
                         <p class="name">Minidu Thiranjana</p>
                     </div>
+
                 </div>
 
                 <div class="story_card">
+
                     <img src="image/story_4.png">
+
                     <div class="story_profile">
+
                         <img src="image/profile_3.jpg">
-                        <div class="cricle"></div>                        
+                        <div class="cricle"></div>
+                        
                     </div>
+
                     <div class="story_name">
                         <p class="name">Kavisha Vidurangi</p>
                     </div>
+
                 </div>
 
                 <div class="story_card">
+
                     <img src="image/story_5.jpg">
+
                     <div class="story_profile">
+
                         <img src="image/profile_4.png">
-                        <div class="cricle"></div>                     
+                        <div class="cricle"></div>
+                        
                     </div>
+
                     <div class="story_name">
                         <p class="name">Kavindu Akalanka</p>
                     </div>
-                </div>                
+
+                </div>
+
+                
 
             </div>
-         </div>
-      </div>
 
 
             <div class="my_post">
@@ -1059,7 +1067,7 @@ nav .right img{
 
                     <div class="post_icon">
                         <i class="fa-solid fa-video red"></i>
-                        <p>Live</p>
+                        <p>Live video</p>
                     </div>
 
                     <div class="post_icon">
@@ -1069,7 +1077,7 @@ nav .right img{
 
                     <div class="post_icon">
                         <i class="fa-regular fa-face-grin yellow"></i>
-                        <p>Feelings</p>
+                        <p>Feeling/activity</p>
                     </div>
 
                 </div>
@@ -1080,14 +1088,23 @@ nav .right img{
             <div class="room">
                 
                 <div class="room_image">
+
                     <img src="image/live_video.png">
                     <p class="room_tag">Create room</p>
+
                 </div>
 
                 <div class="room_profile">
+
                     <img src="image/profile_1.jpg">
                     <img src="image/profile_2.jpg">
                     <img src="image/profile_3.jpg">
+                    <img src="image/profile_4.png">
+                    <img src="image/profile_5.png">
+                    <img src="image/profile_6.png">
+                    <img src="image/profile_7.png">
+                    <img src="image/profile_8.png">
+
                 </div>
 
             </div>
@@ -1127,7 +1144,7 @@ nav .right img{
                         <img src="image/like.png">
                         <img src="image/haha.png">
                         <img src="image/heart.png">
-                        <p>You,  and 25K others</p>
+                        <p>You, Charith Disanayaka and 25K others</p>
                     </div>
 
                     <div class="comment">
@@ -1212,7 +1229,7 @@ nav .right img{
                         <img src="image/like.png">
                         <img src="image/haha.png">
                         <img src="image/heart.png">
-                        <p>You,  and 25K others</p>
+                        <p>You, Charith Disanayaka and 25K others</p>
                     </div>
 
                     <div class="comment">
@@ -1297,7 +1314,7 @@ nav .right img{
                         <img src="image/like.png">
                         <img src="image/haha.png">
                         <img src="image/heart.png">
-                        <p>You,  and 25K others</p>
+                        <p>You, Charith Disanayaka and 25K others</p>
                     </div>
 
                     <div class="comment">
@@ -1382,7 +1399,7 @@ nav .right img{
                         <img src="image/like.png">
                         <img src="image/haha.png">
                         <img src="image/heart.png">
-                        <p>You,  and 25K others</p>
+                        <p>You, Charith Disanayaka and 25K others</p>
                     </div>
 
                     <div class="comment">
@@ -1467,7 +1484,7 @@ nav .right img{
                         <img src="image/like.png">
                         <img src="image/haha.png">
                         <img src="image/heart.png">
-                        <p>You,  and 25K others</p>
+                        <p>You, Charith Disanayaka and 25K others</p>
                     </div>
 
                     <div class="comment">
