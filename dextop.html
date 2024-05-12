@@ -3,71 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Basic Desktop Website Layout</title>
-<style>
-    body {
-    	width: 1280px;
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-    }
-    header {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-    }
-    nav {
-        float: left;
-        width: 25%;
-        background: #f1f1f1;
-        padding: 15px;
-        box-sizing: border-box;
-    }
-    section {
-        float: left;
-        width: 50%;
-        padding: 15px;
-        box-sizing: border-box;
-    }
-    aside {
-        float: left;
-        width: 25%;
-        background: #f9f9f9;
-        padding: 15px;
-        box-sizing: border-box;
-    }
-    footer {
-        clear: both;
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-    }
+<title>Simple Website</title>
+<link rel="stylesheet" href="stylees.css">
+	<style>
+	body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.header .left {
+    display: flex;
+    align-items: center;
+}
+
+.header .left img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.header .left input[type="text"] {
+    padding: 5px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.header .center {
+    display: flex;
+    align-items: center;
+}
+
+.header .center img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.header .right {
+    display: flex;
+    align-items: center;
+}
+
+.header .right img {
+    height: 30px;
+    margin-left: 10px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.navigation img {
+    height: 30px;
+    margin: 0 10px;
+}
+
+.content {
+    padding: 20px 0;
+}
 </style>
 </head>
 <body>
-    <header>
-        <h6>Website Header</h6>
-    </header>
-    <nav>
-        <h6>Menu</h6>
-        <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-        </ul>
-    </nav>
-    <section>
-        <h6>Home Section</h6>
-        <p>Main content of the home section goes here.</p>
-    </section>
-    <aside>
-        <h6>Messenger</h6>
-        <p>Messenger content goes here.</p>
-    </aside>
-    <footer>
-        <p>Website Footer</p>
-    </footer>
+    <div class="container">
+        <div class="header">
+            <div class="left">
+                <img src="facebook1.png" alt="Facebook Logo">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="center">
+                <img src="home.png" alt="Home Icon">
+                <img src="friends.png" alt="Friends Icon">
+                <img src="chat.png" alt="Chat Icon">
+                <img src="tv.png" alt="TV Icon">
+                <img src="notifications.png" alt="Notification Icon">
+                <img src="group.png" alt="Groups Icon">
+            </div>
+            <div class="right">                                                
+                <img src="icon1.png" alt="Icon 1">
+                <img src="icon2.png" alt="Icon 2">
+                <img src="menu_icon.png" alt="Menu Icon">
+                <img src="marketplace_icon.png" alt="Marketplace Icon">
+                <img src="profile_icon.png" alt="Profile Icon">
+            </div>
+        </div>
+        <div class="content">
+            <!-- Content Goes Here -->
+        </div>
+    </div>
 </body>
-</html>
+    </html>
