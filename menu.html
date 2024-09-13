@@ -1,17 +1,233 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dark Mode Example</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global styles */
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            align-items: center;
+            background-color: #57CE00;
+        }
+    /* First Part */
+
+        /* Header styles */
+        header {
+            width: 100%;
+            padding: 1%;
+            display: flex;
+            background-color: #fff;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h4 {
+            font-size: 150%;
+            margin: 0 0 0 1%;
+            font-weight: bold;
+            margin-left: 3%;
+            color: #FF0003;
+        }
+
+        .brand {
+            width: 25%;
+            height: auto;
+            display: flex;
+            background-color: #fff;
+            justify-content: center;
+            align-items: center;
+            margin-right: 3%;
+        }
+
+        .brand img {
+            width: 25%;
+            height: auto;
+            margin-left: 20%;
+        }
+
+        /* Navigation styles */
+        nav {
+            width: 100%;
+            padding: 1%;
+            display: flex;
+            background-color: #fff;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 1%;
+        }
+
+        nav img {
+            width: 7%;
+            height: auto;
+        }
+        
+        /* First Part End */
+        
+       .top-menu-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2px 1px; /* Updated margin for center alignment */
+    cursor: pointer;
+    font-size: 18px;
+    color: #FF6000;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+    max-width: 96%;
+    height: auto;
+}
+
+    	.container {
+        	width: 100%;
+            height: auto;
+            transition: background-color 0.3s;
+        }
+        
+        .dark-mode {
+            background-color: #000000;
+            color: white;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 53px;
+            height: 25px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 2px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #0E1C00;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .dark-mode-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 1px 2px; /* Updated margin for center alignment */
+            font-size: 18px;
+            padding: 10px;
+            border: 1px solid #FF5300;
+            border-radius: 5px;
+            max-width: 96%;
+            height: auto;
+            color: #FF0003;
+            background-color: #fff;
+        }
+
+        .dark-mode-option img {
+            border-radius: 50%;
+            width: 10%;
+            height: auto;
+        }
+        
+
+body.dark-mode .container {
+  filter: invert(1);
+  background-color: #333333; 
+}
+
+body.dark-mode {
+            background-color: #000000;
+        }
+        
+    	</style>
+    </head>
 <body>
-  <button id="toggle-dark-mode">Toggle Dark Mode</button>
+	<div class="container" >
+    <header>
+    <h4>facebook</h4>
+    <div class="brand">
+        <img src="search.png" alt="Search" onclick="navigateToPage('search')">
+        <img src="menu.png" alt="Menu" onclick="navigateToPage('menu')">
+    </div>
+</header>
+
+<nav>
+    <img src="home.png" alt="Home" onclick="navigateToPage('home')">
+    <img src="friends.png" alt="Friends" onclick="navigateToPage('friends')">
+    <img src="chat.png" alt="Chat" onclick="navigateToPage('chat')">
+    <img src="tv.png" alt="TV" onclick="navigateToPage('tv')">
+    <img src="notifications.png" alt="Notifications" onclick="navigateToPage('notifications')">
+    <img src="group.png" alt="Groups" onclick="navigateToPage('groups')">
+</nav>
+
+<div class="dark-mode-option" >
+    <img id="darkModeImg" src="darkmode.png" alt="Darkmode">
+    <span class="menu-text">Dark Mode</span>
+    <label class="switch">
+        <input type="checkbox" id="toggle-dark-mode">
+        <span class="slider round"></span>
+    </label>
+</div>
+
+
+    </div>
+    </div>
 
   <h1>Welcome to My Website</h1>
   <p>This is an example page with dark mode toggle.</p>
-
   <script src="script.js"></script>
 </body>
-</html>
+	</html>
